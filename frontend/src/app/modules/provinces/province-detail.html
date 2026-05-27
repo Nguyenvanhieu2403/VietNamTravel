@@ -1,0 +1,152 @@
+<div class="province-detail-page">
+  <!-- Cinematic Hero Banner -->
+  <section class="hero-banner">
+    <div class="hero-image" [style.background-image]="'url(' + province.heroImage + ')'"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a routerLink="/">Trang chủ</a>
+        <span>/</span>
+        <a routerLink="/provinces">Tỉnh thành</a>
+        <span>/</span>
+        <span>{{ province.name }}</span>
+      </div>
+      <span class="province-tag">{{ province.region }}</span>
+      <h1 class="province-name">{{ province.name }}</h1>
+      <p class="province-intro">{{ province.description }}</p>
+
+      <!-- Quick Info Pills -->
+      <div class="quick-info-pills">
+        <div class="info-pill">
+          <span class="pill-icon">📅</span>
+          <span class="pill-text">{{ province.bestTimeToVisit }}</span>
+        </div>
+        <div class="info-pill">
+          <span class="pill-icon">💰</span>
+          <span class="pill-text">{{ province.averageBudget }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-hint">
+      <span>Cuộn để khám phá</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Immersive Gallery Section -->
+  <section class="content-section gallery-section fade-in-section">
+    <div class="section-container">
+      <app-section-header
+        tag="HÌNH ẢNH"
+        title="Khám Phá Vẻ Đẹp"
+        description="Những khoảnh khắc đẹp nhất được ghi lại qua ống kính"
+        align="center">
+      </app-section-header>
+
+      <div class="gallery-masonry">
+        @for (image of province.gallery; track image; let i = $index) {
+          <div class="gallery-item" [class.gallery-large]="i === 0">
+            <img [src]="image" [alt]="province.name">
+            <div class="gallery-overlay">
+              <span class="zoom-icon">🔍</span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Highlights Section -->
+  <section class="content-section highlights-section fade-in-section">
+    <div class="section-container-wide">
+      <app-section-header
+        tag="ĐIỂM ĐẾN"
+        title="Địa Danh Nổi Bật"
+        description="Những điểm đến không thể bỏ lỡ khi đến {{ province.name }}"
+        align="center">
+      </app-section-header>
+
+      <div class="highlights-editorial">
+        @for (highlight of province.highlights; track highlight.name; let i = $index) {
+          <div class="highlight-card-editorial" [class.highlight-reverse]="i % 2 === 1">
+            <div class="highlight-number">{{ (i + 1).toString().padStart(2, '0') }}</div>
+            <div class="highlight-content">
+              <h3>{{ highlight.name }}</h3>
+              <p>{{ highlight.description }}</p>
+              <a href="#" class="highlight-link">Xem chi tiết →</a>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Foods Section -->
+  <section class="content-section foods-section fade-in-section">
+    <div class="section-container">
+      <app-section-header
+        tag="ẨM THỰC"
+        title="Đặc Sản Địa Phương"
+        description="Những món ăn đặc trưng không thể bỏ qua"
+        align="center">
+      </app-section-header>
+
+      <div class="foods-carousel">
+        @for (food of province.foods; track food.name) {
+          <div class="food-card-premium">
+            <div class="food-image-wrapper">
+              <img [src]="food.image" [alt]="food.name" class="food-image">
+              <div class="food-overlay">
+                <h4 class="food-name">{{ food.name }}</h4>
+                <span class="food-badge">Đặc sản</span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Info Panel Section -->
+  <section class="content-section info-section fade-in-section">
+    <div class="section-container">
+      <div class="info-layout">
+        <!-- Main Info Cards -->
+        <div class="info-cards">
+          <div class="info-card-premium">
+            <div class="info-icon">🌤️</div>
+            <h3>Thời Điểm Lý Tưởng</h3>
+            <p class="info-content">{{ province.bestTimeToVisit }}</p>
+          </div>
+
+          <div class="info-card-premium">
+            <div class="info-icon">💵</div>
+            <h3>Ngân Sách Ước Tính</h3>
+            <p class="info-content">{{ province.averageBudget }}</p>
+          </div>
+
+          <div class="info-card-premium weather-card">
+            <div class="info-icon">📊</div>
+            <h3>Thời Tiết Theo Mùa</h3>
+            <div class="weather-timeline">
+              @for (weather of province.weather; track weather.month) {
+                <div class="weather-item-premium">
+                  <div class="weather-month">{{ weather.month }}</div>
+                  <div class="weather-bar">
+                    <div class="weather-fill"></div>
+                  </div>
+                  <div class="weather-details">
+                    <span class="weather-condition">{{ weather.condition }}</span>
+                    <span class="weather-temp">{{ weather.temp }}</span>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  # Database Service (SQL Server)
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: travel_vietnam_db
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=TravelVietNamPass@123
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+    networks:
+      - travel_network
+
+  # Cache Service (Redis)
+  redis:
+    image: redis:7.2-alpine
+    container_name: travel_vietnam_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - travel_network
+
+  # Backend Web API Service
+  api:
+    image: travel_vietnam_api
+    container_name: travel_vietnam_api
+    build:
+      context: ./backend
+      dockerfile: src/TravelVietnam.WebApi/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=TravelVietnamDb;User Id=sa;Password=TravelVietNamPass@123;TrustServerCertificate=True;
+      - ConnectionStrings__Redis=redis:6379
+      - JwtSettings__SecretKey=TravelVietnam_SuperSecureKey_For_JwtBearer_SHA256_Authentication_2026
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+      - redis
+    networks:
+      - travel_network
+
+  # Frontend SSR Service
+  web:
+    image: travel_vietnam_web
+    container_name: travel_vietnam_web
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4000" # SSR server port
+    environment:
+      - API_URL=http://api:80 # Maps to internal docker network API port
+    depends_on:
+      - api
+    networks:
+      - travel_network
+
+volumes:
+  sql_data:
+  redis_data:
+
+networks:
+  travel_network:
+    driver: bridge

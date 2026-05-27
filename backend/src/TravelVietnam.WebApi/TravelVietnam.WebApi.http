@@ -1,0 +1,6 @@
+@TravelVietnam.WebApi_HostAddress = http://localhost:5262
+
+GET {{TravelVietnam.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,24 @@
+<nav class="floating-navbar" [class.scrolled]="isScrolled()">
+  <div class="navbar-container">
+    <a routerLink="/" class="logo">
+      <span class="logo-icon">✦</span>
+      <span class="logo-text">VIỆT NAM</span>
+    </a>
+
+    <div class="nav-links" [class.mobile-open]="isMobileMenuOpen()">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Trang Chủ</a>
+      <a routerLink="/regions" routerLinkActive="active">Vùng Miền</a>
+      <a routerLink="/provinces" routerLinkActive="active">Tỉnh Thành</a>
+      <a routerLink="/destinations" routerLinkActive="active">Điểm Đến</a>
+      <a routerLink="/culture" routerLinkActive="active">Văn Hóa</a>
+      <a routerLink="/blog" routerLinkActive="active">Blog</a>
+      <a routerLink="/ai-planner" routerLinkActive="active" class="nav-cta">AI Gợi Ý</a>
+    </div>
+
+    <button class="mobile-toggle" (click)="toggleMobileMenu()" [class.open]="isMobileMenuOpen()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>

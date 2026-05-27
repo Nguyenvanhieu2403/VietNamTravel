@@ -1,0 +1,17 @@
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\bin\Debug\net8.0\TravelVietnam.Infrastructure.deps.json
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\bin\Debug\net8.0\TravelVietnam.Infrastructure.dll
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\bin\Debug\net8.0\TravelVietnam.Infrastructure.pdb
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\bin\Debug\net8.0\TravelVietnam.Application.dll
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\bin\Debug\net8.0\TravelVietnam.Domain.dll
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\bin\Debug\net8.0\TravelVietnam.Application.pdb
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\bin\Debug\net8.0\TravelVietnam.Domain.pdb
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.csproj.AssemblyReference.cache
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.AssemblyInfoInputs.cache
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.AssemblyInfo.cs
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.csproj.CoreCompileInputs.cache
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVi.C70AC768.Up2Date
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.dll
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\refint\TravelVietnam.Infrastructure.dll
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.pdb
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\ref\TravelVietnam.Infrastructure.dll

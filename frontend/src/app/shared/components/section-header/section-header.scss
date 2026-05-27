@@ -1,0 +1,49 @@
+$color-accent-gold: #D4AF37;
+$color-text-white: #FFFFFF;
+$color-text-gray: #A0A0AB;
+
+.section-header {
+  margin-bottom: 60px;
+
+  &.text-center {
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.text-left {
+    text-align: left;
+    max-width: 700px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $color-accent-gold;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: $color-text-white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .description {
+    font-size: 1.1rem;
+    color: $color-text-gray;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+}

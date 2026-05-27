@@ -1,0 +1,163 @@
+<div class="destinations-page">
+  <!-- Cinematic Hero Banner -->
+  <section class="hero-banner">
+    <div class="hero-image"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <span class="hero-tag">KHÁM PHÁ VIỆT NAM</span>
+      <h1 class="hero-title">Những Điểm Đến<br/>Huyền Thoại</h1>
+      <p class="hero-description">Từ vịnh biển kỳ vĩ đến núi rừng hùng vĩ, từ phố cổ trầm mặc đến thành phố hiện đại</p>
+    </div>
+    <div class="scroll-hint">
+      <span>Khám phá</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Search & Filter Section -->
+  <section class="filter-section reveal-section">
+    <div class="section-container">
+      <div class="filter-controls">
+        <!-- Search Bar -->
+        <div class="search-box">
+          <input
+            type="text"
+            placeholder="Tìm kiếm điểm đến..."
+            [value]="searchQuery()"
+            (input)="onSearchChange($event)"
+            class="search-input">
+          <span class="search-icon">🔍</span>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="category-filters">
+          @for (cat of categories; track cat.id) {
+            <button
+              class="category-btn"
+              [class.active]="selectedCategory() === cat.id"
+              (click)="selectCategory(cat.id)">
+              <span class="cat-icon">{{ cat.icon }}</span>
+              <span class="cat-name">{{ cat.name }}</span>
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="featured-section reveal-section">
+    <div class="section-container">
+      <app-section-header
+        tag="NỔI BẬT"
+        title="Top Điểm Đến Cinematic"
+        description="Những địa danh mang tính biểu tượng nhất của Việt Nam"
+        align="center">
+      </app-section-header>
+
+      <div class="featured-grid">
+        @for (dest of featuredDestinations; track dest.id; let i = $index) {
+          <div class="featured-card" [class.featured-large]="i === 0">
+            <app-cinematic-card
+              [imageUrl]="dest.imageUrl"
+              [tag]="dest.category.toUpperCase()"
+              [title]="dest.name"
+              [description]="dest.description"
+              [link]="'/destinations/' + dest.slug"
+              [aspectRatio]="i === 0 ? '16/10' : '4/5'">
+            </app-cinematic-card>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- All Destinations Grid -->
+  <section class="destinations-section reveal-section">
+    <div class="section-container">
+      <app-section-header
+        tag="TẤT CẢ ĐIỂM ĐẾN"
+        title="Khám Phá Toàn Bộ"
+        description="Hơn 100 điểm đến tuyệt vời trên khắp Việt Nam"
+        align="center">
+      </app-section-header>
+
+      <div class="destinations-grid">
+        @for (dest of filteredDestinations; track dest.id) {
+          <div class="destination-card">
+            <div class="card-image" [style.background-image]="'url(' + dest.imageUrl + ')'"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <span class="card-category">{{ dest.category }}</span>
+              <h3 class="card-title">{{ dest.name }}</h3>
+              <p class="card-description">{{ dest.description }}</p>
+
+              <div class="card-meta">
+                <div class="meta-item">
+                  <span class="meta-icon">📅</span>
+                  <span class="meta-text">{{ dest.season }}</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-icon">💰</span>
+                  <span class="meta-text">{{ dest.budget }}</span>
+                </div>
+              </div>
+
+              <div class="card-tags">
+                @for (tag of dest.tags; track tag) {
+                  <span class="tag-chip">{{ tag }}</span>
+                }
+              </div>
+
+              <a [href]="'/destinations/' + dest.slug" class="card-link">
+                Khám phá →
+              </a>
+            </div>
+          </div>
+        }
+      </div>
+
+      @if (filteredDestinations.length === 0) {
+        <div class="no-results">
+          <p>Không tìm thấy điểm đến phù hợp</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Hidden Gems Section -->
+  <section class="gems-section reveal-section">
+    <div class="section-container">
+      <app-section-header
+        tag="BÍ MẬT"
+        title="Những Viên Ngọc Ẩn"
+        description="Khám phá những địa danh ít người biết đến nhưng tuyệt đẹp"
+        align="center">
+      </app-section-header>
+
+      <div class="gems-grid">
+        <div class="gem-card">
+          <div class="gem-image" style="background-image: url('https://images.unsplash.com/photo-1508873696983-2df519f0397e?auto=format&fit=crop&w=800&q=80')"></div>
+          <div class="gem-content">
+            <h4>Mù Cang Chải</h4>
+            <p>Ruộng bậc thang hoang sơ ít người biết</p>
+          </div>
+        </div>
+        <div class="gem-card">
+          <div class="gem-image" style="background-image: url('https://images.unsplash.com/photo-1524230507669-5ff9e615b3e4?auto=format&fit=crop&w=800&q=80')"></div>
+          <div class="gem-content">
+            <h4>Bãi Xếp</h4>
+            <p>Bãi biển hoang sơ tuyệt đẹp ở Phú Yên</p>
+          </div>
+        </div>
+        <div class="gem-card">
+          <div class="gem-image" style="background-image: url('https://images.unsplash.com/photo-1599708153386-62e2531a5ebf?auto=format&fit=crop&w=800&q=80')"></div>
+          <div class="gem-content">
+            <h4>Hồ Tà Đùng</h4>
+            <p>Hồ nước xanh ngọc bích giữa rừng núi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

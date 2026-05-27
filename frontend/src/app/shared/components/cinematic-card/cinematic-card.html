@@ -1,0 +1,18 @@
+<div class="cinematic-card" [style.aspect-ratio]="aspectRatio">
+  <div class="card-image" [style.background-image]="'url(' + imageUrl + ')'"></div>
+  <div class="card-overlay"></div>
+  <div class="card-content">
+    @if (tag) {
+      <span class="card-tag">{{ tag }}</span>
+    }
+    <h3 class="card-title">{{ title }}</h3>
+    @if (description) {
+      <p class="card-description">{{ description }}</p>
+    }
+    @if (link) {
+      <a [routerLink]="link" class="card-link">
+        Khám phá <span class="arrow">→</span>
+      </a>
+    }
+  </div>
+</div>

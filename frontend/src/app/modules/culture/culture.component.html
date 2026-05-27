@@ -1,0 +1,183 @@
+<div class="culture-page">
+  <!-- Cinematic Cultural Hero -->
+  <section class="culture-hero">
+    <div class="hero-background"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">VĂN HÓA VIỆT NAM</span>
+      <h1 class="hero-title">Hồn Việt<br/>Nghìn Năm</h1>
+      <p class="hero-description">Khám phá bản sắc văn hóa độc đáo qua hàng ngàn năm lịch sử</p>
+    </div>
+  </section>
+
+  <!-- Cultural Quote -->
+  <section class="quote-section reveal-section">
+    <div class="section-container">
+      <div class="quote-content">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">Văn hóa Việt Nam là dòng chảy bất tận của truyền thống và hiện đại, nơi quá khứ và tương lai hòa quyện</p>
+        <span class="quote-author">— Di sản văn hóa phi vật thể</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traditional Regions -->
+  <section class="regions-section reveal-section">
+    <div class="section-container">
+      <app-section-header
+        tag="BA MIỀN"
+        title="Vùng Miền Văn Hóa"
+        description="Mỗi vùng miền mang một bản sắc văn hóa riêng biệt"
+        align="center">
+      </app-section-header>
+
+      <div class="regions-grid">
+        @for (region of culturalRegions; track region.id) {
+          <div class="region-card">
+            <div class="region-image" [style.background-image]="'url(' + region.imageUrl + ')'"></div>
+            <div class="region-overlay"></div>
+            <div class="region-content">
+              <h3 class="region-name">{{ region.name }}</h3>
+              <p class="region-description">{{ region.description }}</p>
+              <ul class="region-highlights">
+                @for (highlight of region.highlights; track highlight) {
+                  <li>{{ highlight }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Vietnamese Cuisine -->
+  <section class="cuisine-section reveal-section">
+    <div class="section-container">
+      <app-section-header
+        tag="ẨM THỰC"
+        title="Hương Vị Việt Nam"
+        description="Ẩm thực Việt - Tinh hoa của đất trời và con người"
+        align="center">
+      </app-section-header>
+
+      <div class="cuisine-grid">
+        @for (dish of cuisines; track dish.id) {
+          <div class="cuisine-card">
+            <div class="cuisine-image" [style.background-image]="'url(' + dish.imageUrl + ')'"></div>
+            <div class="cuisine-overlay"></div>
+            <div class="cuisine-content">
+              <span class="cuisine-region">{{ dish.region }}</span>
+              <h4 class="cuisine-name">{{ dish.name }}</h4>
+              <p class="cuisine-description">{{ dish.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Festivals Timeline -->
+  <section class="festivals-section reveal-section">
+    <div class="section-container">
+      <app-section-header
+        tag="LỄ HỘI"
+        title="Lễ Hội Truyền Thống"
+        description="Những lễ hội đậm đà bản sắc dân tộc"
+        align="center">
+      </app-section-header>
+
+      <div class="festivals-grid">
+        @for (festival of festivals; track festival.id) {
+          <div class="festival-card">
+            <div class="festival-image" [style.background-image]="'url(' + festival.imageUrl + ')'"></div>
+            <div class="festival-overlay"></div>
+            <div class="festival-content">
+              <span class="festival-month">{{ festival.month }}</span>
+              <h4 class="festival-name">{{ festival.name }}</h4>
+              <p class="festival-description">{{ festival.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Heritage Highlights -->
+  <section class="heritage-section reveal-section">
+    <div class="heritage-split">
+      <!-- Left: Image -->
+      <div class="heritage-image">
+        <div class="heritage-bg" style="background-image: url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80')"></div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="heritage-content">
+        <span class="heritage-tag">DI SẢN UNESCO</span>
+        <h2 class="heritage-title">Di Sản Thế Giới</h2>
+        <p class="heritage-text">
+          Việt Nam tự hào với 8 di sản văn hóa và thiên nhiên thế giới được UNESCO công nhận.
+          Từ Vịnh Hạ Long kỳ vĩ đến Phố cổ Hội An cổ kính, từ Nhã nhạc cung đình Huế đến
+          Hát Quan họ Bắc Ninh - mỗi di sản là một câu chuyện về lịch sử và văn hóa nghìn năm.
+        </p>
+        <ul class="heritage-list">
+          <li>Vịnh Hạ Long</li>
+          <li>Phố cổ Hội An</li>
+          <li>Thánh địa Mỹ Sơn</li>
+          <li>Hoàng thành Huế</li>
+          <li>Nhã nhạc cung đình Huế</li>
+          <li>Hát Quan họ Bắc Ninh</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traditional Arts -->
+  <section class="arts-section reveal-section">
+    <div class="section-container">
+      <app-section-header
+        tag="NGHỆ THUẬT"
+        title="Nghệ Thuật Truyền Thống"
+        description="Tinh hoa nghệ thuật dân gian Việt Nam"
+        align="center">
+      </app-section-header>
+
+      <div class="arts-grid">
+        <div class="art-card">
+          <div class="art-icon">🎭</div>
+          <h4>Múa Rối Nước</h4>
+          <p>Nghệ thuật biểu diễn độc đáo trên mặt nước</p>
+        </div>
+        <div class="art-card">
+          <div class="art-icon">🎵</div>
+          <h4>Ca Trù</h4>
+          <p>Hát xướng cổ truyền tinh tế và sâu lắng</p>
+        </div>
+        <div class="art-card">
+          <div class="art-icon">🎨</div>
+          <h4>Tranh Đông Hồ</h4>
+          <p>Tranh dân gian với màu sắc rực rỡ</p>
+        </div>
+        <div class="art-card">
+          <div class="art-icon">🪕</div>
+          <h4>Đàn Bầu</h4>
+          <p>Nhạc cụ truyền thống với âm thanh du dương</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cultural Experiences CTA -->
+  <section class="cta-section reveal-section">
+    <div class="section-container">
+      <div class="cta-content">
+        <h2>Trải Nghiệm Văn Hóa Việt</h2>
+        <p>Đắm mình trong những trải nghiệm văn hóa đích thực</p>
+        <div class="cta-buttons">
+          <a href="/destinations" class="btn-primary">Khám Phá Ngay</a>
+          <a href="/blog" class="btn-secondary">Đọc Thêm</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

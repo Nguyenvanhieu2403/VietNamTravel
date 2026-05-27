@@ -1,0 +1,11 @@
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\bin\Debug\net8.0\TravelVietnam.Domain.deps.json
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\bin\Debug\net8.0\TravelVietnam.Domain.dll
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\bin\Debug\net8.0\TravelVietnam.Domain.pdb
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.AssemblyInfoInputs.cache
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.AssemblyInfo.cs
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.csproj.CoreCompileInputs.cache
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.dll
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\refint\TravelVietnam.Domain.dll
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.pdb
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\ref\TravelVietnam.Domain.dll

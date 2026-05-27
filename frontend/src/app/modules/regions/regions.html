@@ -1,0 +1,53 @@
+<div class="regions-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="section-container">
+      <h1 class="hero-title">Khám Phá Vùng Miền Việt Nam</h1>
+      <p class="hero-description">
+        Từ Bắc chí Nam, mỗi vùng miền là một bức tranh văn hóa độc đáo với phong cảnh thiên nhiên hùng vĩ,
+        ẩm thực đặc sắc và con người hiền hòa, mến khách.
+      </p>
+    </div>
+  </section>
+
+  <!-- Regions Grid -->
+  <section class="regions-section">
+    <div class="section-container">
+      <div class="regions-grid">
+        @for (region of regions; track region.id) {
+          <div class="region-card">
+            <div class="region-image">
+              <div class="region-image-wrapper" [style.background-image]="'url(' + region.imageUrl + ')'"></div>
+            </div>
+
+            <div class="region-content">
+              <span class="region-tag">{{ region.slug }}</span>
+              <h2 class="region-name">{{ region.name }}</h2>
+              <p class="region-description">{{ region.description }}</p>
+
+              <div class="region-meta">
+                <div class="meta-item">
+                  <h4>Điểm đến nổi bật</h4>
+                  <div class="chip-container">
+                    @for (highlight of region.highlights; track highlight) {
+                      <span class="chip">{{ highlight }}</span>
+                    }
+                  </div>
+                </div>
+
+                <div class="meta-item">
+                  <h4>Thời điểm lý tưởng</h4>
+                  <p class="season-text">{{ region.bestSeason }}</p>
+                </div>
+              </div>
+
+              <a [routerLink]="['/provinces']" [queryParams]="{ region: region.slug }" class="region-link">
+                Khám phá tỉnh thành <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

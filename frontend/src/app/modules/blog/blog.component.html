@@ -1,0 +1,166 @@
+<div class="blog-page">
+  <!-- Featured Article Hero -->
+  @if (featuredArticle) {
+    <section class="featured-hero">
+      <div class="hero-image" [style.background-image]="'url(' + featuredArticle.imageUrl + ')'"></div>
+      <div class="hero-gradient"></div>
+      <div class="hero-content">
+        <span class="hero-category">{{ featuredArticle.category.toUpperCase() }}</span>
+        <h1 class="hero-title">{{ featuredArticle.title }}</h1>
+        <p class="hero-excerpt">{{ featuredArticle.excerpt }}</p>
+        <div class="hero-meta">
+          <span class="meta-author">{{ featuredArticle.author }}</span>
+          <span class="meta-separator">•</span>
+          <span class="meta-date">{{ featuredArticle.date }}</span>
+          <span class="meta-separator">•</span>
+          <span class="meta-read">{{ featuredArticle.readTime }}</span>
+        </div>
+        <a [href]="'/blog/' + featuredArticle.slug" class="hero-cta">Đọc Bài Viết →</a>
+      </div>
+    </section>
+  }
+
+  <!-- Search & Filter -->
+  <section class="filter-section reveal-section">
+    <div class="section-container">
+      <div class="filter-controls">
+        <!-- Search -->
+        <div class="search-box">
+          <input
+            type="text"
+            placeholder="Tìm kiếm bài viết..."
+            [value]="searchQuery()"
+            (input)="onSearchChange($event)"
+            class="search-input">
+          <span class="search-icon">🔍</span>
+        </div>
+
+        <!-- Categories -->
+        <div class="category-filters">
+          @for (cat of categories; track cat.id) {
+            <button
+              class="category-btn"
+              [class.active]="selectedCategory() === cat.id"
+              (click)="selectCategory(cat.id)">
+              {{ cat.name }}
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editor's Picks -->
+  <section class="editors-section reveal-section">
+    <div class="section-container">
+      <app-section-header
+        tag="BIÊN TẬP VIÊN CHỌN"
+        title="Bài Viết Nổi Bật"
+        description="Những câu chuyện du lịch được yêu thích nhất"
+        align="center">
+      </app-section-header>
+
+      <div class="editors-grid">
+        @for (article of editorsPicks; track article.id) {
+          <div class="editor-card">
+            <div class="editor-image" [style.background-image]="'url(' + article.imageUrl + ')'"></div>
+            <div class="editor-overlay"></div>
+            <div class="editor-content">
+              <span class="editor-category">{{ article.category }}</span>
+              <h3 class="editor-title">{{ article.title }}</h3>
+              <p class="editor-excerpt">{{ article.excerpt }}</p>
+              <div class="editor-meta">
+                <span>{{ article.author }}</span>
+                <span>•</span>
+                <span>{{ article.readTime }}</span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- All Articles Grid -->
+  <section class="articles-section reveal-section">
+    <div class="section-container">
+      <app-section-header
+        tag="TẤT CẢ BÀI VIẾT"
+        title="Khám Phá Thêm"
+        description="Hàng trăm câu chuyện du lịch đang chờ bạn"
+        align="center">
+      </app-section-header>
+
+      <div class="articles-grid">
+        @for (article of filteredArticles; track article.id) {
+          <article class="article-card">
+            <div class="article-image" [style.background-image]="'url(' + article.imageUrl + ')'"></div>
+            <div class="article-overlay"></div>
+            <div class="article-content">
+              <span class="article-category">{{ article.category }}</span>
+              <h3 class="article-title">{{ article.title }}</h3>
+              <p class="article-excerpt">{{ article.excerpt }}</p>
+              <div class="article-meta">
+                <div class="meta-author-info">
+                  <span class="author-name">{{ article.author }}</span>
+                  <span class="meta-date">{{ article.date }}</span>
+                </div>
+                <span class="meta-read">{{ article.readTime }}</span>
+              </div>
+              <a [href]="'/blog/' + article.slug" class="article-link">Đọc thêm →</a>
+            </div>
+          </article>
+        }
+      </div>
+
+      @if (filteredArticles.length === 0) {
+        <div class="no-results">
+          <p>Không tìm thấy bài viết phù hợp</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section reveal-section">
+    <div class="section-container">
+      <div class="newsletter-content">
+        <span class="newsletter-tag">ĐĂNG KÝ NHẬN TIN</span>
+        <h2 class="newsletter-title">Nhận Bài Viết Mới Nhất</h2>
+        <p class="newsletter-description">
+          Đăng ký để nhận những câu chuyện du lịch mới nhất và cẩm nang hữu ích mỗi tuần
+        </p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Địa chỉ email của bạn" class="newsletter-input">
+          <button type="submit" class="newsletter-btn">Đăng Ký</button>
+        </form>
+        <p class="newsletter-note">Chúng tôi tôn trọng quyền riêng tư của bạn. Hủy đăng ký bất cứ lúc nào.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Topics -->
+  <section class="trending-section reveal-section">
+    <div class="section-container">
+      <app-section-header
+        tag="XU HƯỚNG"
+        title="Chủ Đề Được Quan Tâm"
+        description="Những chủ đề du lịch đang hot nhất"
+        align="center">
+      </app-section-header>
+
+      <div class="trending-tags">
+        <a href="#" class="trending-tag">#HạLong</a>
+        <a href="#" class="trending-tag">#SaPa</a>
+        <a href="#" class="trending-tag">#HộiAn</a>
+        <a href="#" class="trending-tag">#PhúQuốc</a>
+        <a href="#" class="trending-tag">#ĐàNẵng</a>
+        <a href="#" class="trending-tag">#Huế</a>
+        <a href="#" class="trending-tag">#ĐàLạt</a>
+        <a href="#" class="trending-tag">#NhaTrang</a>
+        <a href="#" class="trending-tag">#PhongNha</a>
+        <a href="#" class="trending-tag">#MùCangChải</a>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,233 @@
+$color-bg-dark: #0A0A0B;
+$color-accent-gold: #D4AF37;
+$color-text-white: #FFFFFF;
+$color-text-gray: #A0A0AB;
+
+.regions-page {
+  min-height: 100vh;
+  background-color: $color-bg-dark;
+  padding-top: 100px;
+}
+
+.hero-section {
+  padding: 80px 0 60px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+
+  .hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFF 30%, $color-accent-gold 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .hero-description {
+    font-size: 1.15rem;
+    color: $color-text-gray;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+}
+
+.regions-section {
+  padding: 60px 0 100px;
+
+  .section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
+  }
+
+  .regions-grid {
+    display: grid;
+    gap: 50px;
+  }
+
+  .region-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    &:nth-child(even) {
+      .region-image {
+        order: 2;
+
+        @media (max-width: 992px) {
+          order: 1;
+        }
+      }
+
+      .region-content {
+        order: 1;
+
+        @media (max-width: 992px) {
+          order: 2;
+        }
+      }
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(212, 175, 55, 0.2);
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+
+      .region-image-wrapper {
+        transform: scale(1.05);
+      }
+    }
+
+    .region-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+
+      .region-image-wrapper {
+        aspect-ratio: 4/3;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(to bottom, transparent 50%, rgba(10, 10, 11, 0.3) 100%);
+        }
+      }
+    }
+
+    .region-content {
+      .region-tag {
+        display: inline-block;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $color-accent-gold;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .region-name {
+        font-family: 'Outfit', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $color-text-white;
+        margin-bottom: 20px;
+        line-height: 1.2;
+
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
+      }
+
+      .region-description {
+        font-size: 1.05rem;
+        color: $color-text-gray;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .region-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 30px;
+
+        .meta-item {
+          h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+            font-weight: 600;
+          }
+
+          .chip-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .chip {
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              padding: 6px 14px;
+              border-radius: 20px;
+              font-size: 0.85rem;
+              color: $color-text-white;
+              transition: all 0.3s ease;
+
+              &:hover {
+                background: rgba(212, 175, 55, 0.15);
+                border-color: $color-accent-gold;
+                color: $color-accent-gold;
+              }
+            }
+          }
+
+          .season-text {
+            font-size: 0.95rem;
+            color: $color-accent-gold;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .region-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, $color-accent-gold 0%, #B8860B 100%);
+        color: $color-bg-dark;
+        padding: 14px 32px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+
+        .arrow {
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+
+          .arrow {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+}

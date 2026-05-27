@@ -1,0 +1,9 @@
+<div class="section-header" [class.text-center]="align === 'center'" [class.text-left]="align === 'left'">
+  @if (tag) {
+    <span class="tag">{{ tag }}</span>
+  }
+  <h2 class="title">{{ title }}</h2>
+  @if (description) {
+    <p class="description">{{ description }}</p>
+  }
+</div>

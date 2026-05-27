@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TravelVietnam.Application/TravelVietnam.Application.csproj" />
+    <Project Path="src/TravelVietnam.Domain/TravelVietnam.Domain.csproj" />
+    <Project Path="src/TravelVietnam.Infrastructure/TravelVietnam.Infrastructure.csproj" />
+    <Project Path="src/TravelVietnam.WebApi/TravelVietnam.WebApi.csproj" />
+  </Folder>
+</Solution>

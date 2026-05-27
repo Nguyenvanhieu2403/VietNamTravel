@@ -1,0 +1,96 @@
+<div class="provinces-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="section-container">
+      <h1 class="hero-title">63 Tỉnh Thành Việt Nam</h1>
+      <p class="hero-description">
+        Khám phá vẻ đẹp độc đáo của từng tỉnh thành, từ núi rừng hùng vĩ đến biển cả bao la,
+        từ thành phố hiện đại đến làng quê bình dị.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="section-container">
+      <div class="filter-bar">
+        <div class="search-box">
+          <input
+            type="text"
+            placeholder="Tìm kiếm tỉnh thành..."
+            [(ngModel)]="searchQuery"
+            class="search-input">
+        </div>
+
+        <div class="region-filters">
+          <button
+            class="filter-btn"
+            [class.active]="selectedRegion === 'all'"
+            (click)="filterByRegion('all')">
+            Tất cả
+          </button>
+          <button
+            class="filter-btn"
+            [class.active]="selectedRegion === 'mien-bac'"
+            (click)="filterByRegion('mien-bac')">
+            Miền Bắc
+          </button>
+          <button
+            class="filter-btn"
+            [class.active]="selectedRegion === 'mien-trung'"
+            (click)="filterByRegion('mien-trung')">
+            Miền Trung
+          </button>
+          <button
+            class="filter-btn"
+            [class.active]="selectedRegion === 'tay-nguyen'"
+            (click)="filterByRegion('tay-nguyen')">
+            Tây Nguyên
+          </button>
+          <button
+            class="filter-btn"
+            [class.active]="selectedRegion === 'mien-nam'"
+            (click)="filterByRegion('mien-nam')">
+            Miền Nam
+          </button>
+          <button
+            class="filter-btn"
+            [class.active]="selectedRegion === 'dong-bang-song-cuu-long'"
+            (click)="filterByRegion('dong-bang-song-cuu-long')">
+            Đồng Bằng
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Provinces Grid -->
+  <section class="provinces-section">
+    <div class="section-container">
+      <div class="provinces-grid">
+        @for (province of filteredProvinces; track province.id) {
+          <div class="province-card">
+            <a [routerLink]="['/provinces', province.slug]" class="card-link">
+              <div class="card-image" [style.background-image]="'url(' + province.imageUrl + ')'"></div>
+              <div class="card-overlay"></div>
+              <div class="card-content">
+                <h3 class="card-title">{{ province.name }}</h3>
+                <p class="card-description">{{ province.description }}</p>
+                <div class="card-meta">
+                  <span class="meta-item">{{ province.bestTimeToVisit }}</span>
+                  <span class="meta-item">~{{ province.averageBudget / 1000000 }}tr VND</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        }
+      </div>
+
+      @if (filteredProvinces.length === 0) {
+        <div class="empty-state">
+          <p>Không tìm thấy tỉnh thành nào phù hợp.</p>
+        </div>
+      }
+    </div>
+  </section>
+</div>

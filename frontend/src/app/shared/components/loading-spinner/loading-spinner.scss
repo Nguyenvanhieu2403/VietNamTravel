@@ -1,0 +1,32 @@
+$color-accent-gold: #D4AF37;
+$color-text-white: #FFFFFF;
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px;
+
+  .spinner-ring {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top-color: $color-accent-gold;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  .spinner-text {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,30 @@
+// Premium route transition animations
+router-outlet ~ * {
+  animation: pageEnter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+// Smooth scroll behavior
+:root {
+  scroll-behavior: smooth;
+}
+
+// Page wrapper for transitions
+app-root {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
