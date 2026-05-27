@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TravelVietnam.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+224fbee83535a9151dbc5fa96d5fea8f4c4d7be7")]
 [assembly: System.Reflection.AssemblyProductAttribute("TravelVietnam.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TravelVietnam.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
     "net8.0": {
       "Asp.Versioning.Abstractions/8.1.0": {
@@ -1168,17 +1168,20 @@
           }
         }
       },
-      "Serilog/3.1.1": {
+      "Serilog/4.3.1": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Serilog.dll": {
+          "lib/net8.0/Serilog.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Serilog.dll": {
+          "lib/net8.0/Serilog.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/Serilog.targets": {}
         }
       },
       "Serilog.AspNetCore/8.0.1": {
@@ -2001,6 +2004,7 @@
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
           "MediatR": "12.2.0",
           "Microsoft.EntityFrameworkCore": "8.0.8",
+          "Serilog": "4.3.1",
           "TravelVietnam.Domain": "1.0.0"
         },
         "compile": {
@@ -3941,30 +3945,32 @@
         "pipelines.sockets.unofficial.nuspec"
       ]
     },
-    "Serilog/3.1.1": {
-      "sha512": "P6G4/4Kt9bT635bhuwdXlJ2SCqqn2nhh4gqFqQueCOr9bK/e7W9ll/IoX1Ter948cV2Z/5+5v8pAfJYUISY03A==",
+    "Serilog/4.3.1": {
+      "sha512": "savYe7h5yRlkqBVOwP8cIRDOdqKiPmYCU4W87JH38sBmcKD5EBoXvQIw6bNEvZ/pTe1gsiye3VFCzBsoppGkXQ==",
       "type": "package",
-      "path": "serilog/3.1.1",
+      "path": "serilog/4.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
+        "build/Serilog.targets",
+        "buildTransitive/Serilog.targets",
         "icon.png",
+        "lib/net10.0/Serilog.dll",
+        "lib/net10.0/Serilog.xml",
         "lib/net462/Serilog.dll",
         "lib/net462/Serilog.xml",
         "lib/net471/Serilog.dll",
         "lib/net471/Serilog.xml",
-        "lib/net5.0/Serilog.dll",
-        "lib/net5.0/Serilog.xml",
         "lib/net6.0/Serilog.dll",
         "lib/net6.0/Serilog.xml",
-        "lib/net7.0/Serilog.dll",
-        "lib/net7.0/Serilog.xml",
+        "lib/net8.0/Serilog.dll",
+        "lib/net8.0/Serilog.xml",
+        "lib/net9.0/Serilog.dll",
+        "lib/net9.0/Serilog.xml",
         "lib/netstandard2.0/Serilog.dll",
         "lib/netstandard2.0/Serilog.xml",
-        "lib/netstandard2.1/Serilog.dll",
-        "lib/netstandard2.1/Serilog.xml",
-        "serilog.3.1.1.nupkg.sha512",
+        "serilog.4.3.1.nupkg.sha512",
         "serilog.nuspec"
       ]
     },
@@ -5326,29 +5332,30 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.8",
       "Microsoft.AspNetCore.OpenApi >= 8.0.27",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.8",
+      "Serilog >= 4.3.1",
       "Serilog.AspNetCore >= 8.0.1",
       "Swashbuckle.AspNetCore >= 6.6.2",
       "TravelVietnam.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\nguye\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj",
+      "projectUniqueName": "E:\\Personal_Project\\VietNamTravel\\backend\\src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj",
       "projectName": "TravelVietnam.WebApi",
-      "projectPath": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\obj\\",
+      "projectPath": "E:\\Personal_Project\\VietNamTravel\\backend\\src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj",
+      "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+      "outputPath": "E:\\Personal_Project\\VietNamTravel\\backend\\src\\TravelVietnam.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5357,16 +5364,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj": {
-              "projectPath": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj"
+            "E:\\Personal_Project\\VietNamTravel\\backend\\src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj": {
+              "projectPath": "E:\\Personal_Project\\VietNamTravel\\backend\\src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj"
             }
           }
         }
@@ -5381,11 +5386,10 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
-        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "Asp.Versioning.Http": {
@@ -5409,6 +5413,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.8, )"
+          },
+          "Serilog": {
+            "target": "Package",
+            "version": "[4.3.1, )"
           },
           "Serilog.AspNetCore": {
             "target": "Package",
@@ -5438,7 +5446,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -13,6 +13,7 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
           "Microsoft.AspNetCore.OpenApi": "8.0.27",
           "Microsoft.EntityFrameworkCore.Design": "8.0.8",
+          "Serilog": "4.3.1",
           "Serilog.AspNetCore": "8.0.1",
           "Swashbuckle.AspNetCore": "6.6.2",
           "TravelVietnam.Infrastructure": "1.0.0"
@@ -691,17 +692,17 @@
           }
         }
       },
-      "Serilog/3.1.1": {
+      "Serilog/4.3.1": {
         "runtime": {
-          "lib/net7.0/Serilog.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "3.1.1.0"
+          "lib/net8.0/Serilog.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.3.0.0"
           }
         }
       },
       "Serilog.AspNetCore/8.0.1": {
         "dependencies": {
-          "Serilog": "3.1.1",
+          "Serilog": "4.3.1",
           "Serilog.Extensions.Hosting": "8.0.0",
           "Serilog.Extensions.Logging": "8.0.0",
           "Serilog.Formatting.Compact": "2.0.0",
@@ -721,7 +722,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.1",
-          "Serilog": "3.1.1",
+          "Serilog": "4.3.1",
           "Serilog.Extensions.Logging": "8.0.0"
         },
         "runtime": {
@@ -733,7 +734,7 @@
       },
       "Serilog.Extensions.Logging/8.0.0": {
         "dependencies": {
-          "Serilog": "3.1.1"
+          "Serilog": "4.3.1"
         },
         "runtime": {
           "lib/net8.0/Serilog.Extensions.Logging.dll": {
@@ -744,7 +745,7 @@
       },
       "Serilog.Formatting.Compact/2.0.0": {
         "dependencies": {
-          "Serilog": "3.1.1"
+          "Serilog": "4.3.1"
         },
         "runtime": {
           "lib/net7.0/Serilog.Formatting.Compact.dll": {
@@ -756,7 +757,7 @@
       "Serilog.Settings.Configuration/8.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyModel": "8.0.1",
-          "Serilog": "3.1.1"
+          "Serilog": "4.3.1"
         },
         "runtime": {
           "lib/net8.0/Serilog.Settings.Configuration.dll": {
@@ -767,7 +768,7 @@
       },
       "Serilog.Sinks.Console/5.0.0": {
         "dependencies": {
-          "Serilog": "3.1.1"
+          "Serilog": "4.3.1"
         },
         "runtime": {
           "lib/net7.0/Serilog.Sinks.Console.dll": {
@@ -778,7 +779,7 @@
       },
       "Serilog.Sinks.Debug/2.0.0": {
         "dependencies": {
-          "Serilog": "3.1.1"
+          "Serilog": "4.3.1"
         },
         "runtime": {
           "lib/netstandard2.1/Serilog.Sinks.Debug.dll": {
@@ -789,7 +790,7 @@
       },
       "Serilog.Sinks.File/5.0.0": {
         "dependencies": {
-          "Serilog": "3.1.1"
+          "Serilog": "4.3.1"
         },
         "runtime": {
           "lib/net5.0/Serilog.Sinks.File.dll": {
@@ -1043,6 +1044,7 @@
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
           "MediatR": "12.2.0",
           "Microsoft.EntityFrameworkCore": "8.0.8",
+          "Serilog": "4.3.1",
           "TravelVietnam.Domain": "1.0.0"
         },
         "runtime": {
@@ -1392,12 +1394,12 @@
       "path": "pipelines.sockets.unofficial/2.2.8",
       "hashPath": "pipelines.sockets.unofficial.2.2.8.nupkg.sha512"
     },
-    "Serilog/3.1.1": {
+    "Serilog/4.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-P6G4/4Kt9bT635bhuwdXlJ2SCqqn2nhh4gqFqQueCOr9bK/e7W9ll/IoX1Ter948cV2Z/5+5v8pAfJYUISY03A==",
-      "path": "serilog/3.1.1",
-      "hashPath": "serilog.3.1.1.nupkg.sha512"
+      "sha512": "sha512-savYe7h5yRlkqBVOwP8cIRDOdqKiPmYCU4W87JH38sBmcKD5EBoXvQIw6bNEvZ/pTe1gsiye3VFCzBsoppGkXQ==",
+      "path": "serilog/4.3.1",
+      "hashPath": "serilog.4.3.1.nupkg.sha512"
     },
     "Serilog.AspNetCore/8.0.1": {
       "type": "package",

@@ -12,6 +12,8 @@ namespace TravelVietnam.Domain.Entities
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
         public decimal EntryFee { get; set; }
+        public string? Slug { get; set; }
+        public string? ThumbnailUrl { get; set; }
 
         // Navigation properties
         public virtual Province Province { get; set; } = null!;

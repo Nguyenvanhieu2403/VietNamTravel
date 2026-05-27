@@ -119,6 +119,127 @@
     ]
   },
   {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.DestinationsController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/Destinations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "provinceId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.DestinationsController",
+    "Method": "Create",
+    "RelativePath": "api/v1/Destinations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "TravelVietnam.Application.Features.Destinations.Commands.CreateDestinationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.DestinationsController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/Destinations/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.DestinationsController",
+    "Method": "Update",
+    "RelativePath": "api/v1/Destinations/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "TravelVietnam.Application.Features.Destinations.Commands.UpdateDestinationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.DestinationsController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/Destinations/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.DestinationsController",
+    "Method": "GetRelated",
+    "RelativePath": "api/v1/Destinations/{id}/related",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TravelVietnam.WebApi.Controllers.ProvincesController",
     "Method": "Get",
     "RelativePath": "api/v1/Provinces",
@@ -210,5 +331,116 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.RegionsController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/Regions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.RegionsController",
+    "Method": "Create",
+    "RelativePath": "api/v1/Regions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "TravelVietnam.Application.Features.Regions.Commands.CreateRegionCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.RegionsController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/Regions/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.RegionsController",
+    "Method": "Update",
+    "RelativePath": "api/v1/Regions/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "TravelVietnam.Application.Features.Regions.Commands.UpdateRegionCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.RegionsController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/Regions/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TravelVietnam.WebApi.Controllers.RegionsController",
+    "Method": "GetBySlug",
+    "RelativePath": "api/v1/Regions/slug/{slug}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "slug",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
