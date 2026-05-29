@@ -23,6 +23,8 @@ namespace TravelVietnam.Application.Mappings
                 .ForMember(dest => dest.MediaFiles, opt => opt.MapFrom(src => src.MediaFiles));
 
             CreateMap<Destination, DestinationDto>()
+                .ForMember(dest => dest.ProvinceName, opt => opt.MapFrom(src => src.Province != null ? src.Province.Name : null))
+                .ForMember(dest => dest.RegionName, opt => opt.MapFrom(src => src.Region != null ? src.Region.Name : null))
                 .ForMember(dest => dest.MediaFiles, opt => opt.MapFrom(src => src.MediaFiles));
 
             CreateMap<Food, FoodDto>();
@@ -35,7 +37,10 @@ namespace TravelVietnam.Application.Mappings
                 .ForMember(dest => dest.UserFullName, opt => opt.MapFrom(src => src.User.FullName));
 
             CreateMap<Blog, BlogDto>()
-                .ForMember(dest => dest.AuthorName, opt => opt.MapFrom(src => src.Author.FullName))
+                .ForMember(dest => dest.MediaFiles, opt => opt.MapFrom(src => src.MediaFiles));
+
+            CreateMap<Culture, CultureDto>()
+                .ForMember(dest => dest.RegionName, opt => opt.MapFrom(src => src.Region != null ? src.Region.Name : null))
                 .ForMember(dest => dest.MediaFiles, opt => opt.MapFrom(src => src.MediaFiles));
         }
     }

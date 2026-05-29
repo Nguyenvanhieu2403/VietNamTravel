@@ -3,6 +3,66 @@
   "WorkspaceRootPath": "D:\\PersonalProject\\TravelVietNam\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.webapi\\controllers\\provincescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|solutionrelative:src\\travelvietnam.webapi\\controllers\\provincescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.application\\features\\provinces\\queries\\getprovincesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|solutionrelative:src\\travelvietnam.application\\features\\provinces\\queries\\getprovincesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6DFCDE3-BADC-86C7-9671-8C1DDFAA045E}|src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.infrastructure\\services\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6DFCDE3-BADC-86C7-9671-8C1DDFAA045E}|src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj|solutionrelative:src\\travelvietnam.infrastructure\\services\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6DFCDE3-BADC-86C7-9671-8C1DDFAA045E}|src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6DFCDE3-BADC-86C7-9671-8C1DDFAA045E}|src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj|solutionrelative:src\\travelvietnam.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.webapi\\controllers\\regionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|solutionrelative:src\\travelvietnam.webapi\\controllers\\regionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D872C06-A7CE-8CA6-DCEF-44AA9A602B82}|src\\TravelVietnam.Domain\\TravelVietnam.Domain.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.domain\\entities\\province.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D872C06-A7CE-8CA6-DCEF-44AA9A602B82}|src\\TravelVietnam.Domain\\TravelVietnam.Domain.csproj|solutionrelative:src\\travelvietnam.domain\\entities\\province.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D872C06-A7CE-8CA6-DCEF-44AA9A602B82}|src\\TravelVietnam.Domain\\TravelVietnam.Domain.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.domain\\entities\\region.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D872C06-A7CE-8CA6-DCEF-44AA9A602B82}|src\\TravelVietnam.Domain\\TravelVietnam.Domain.csproj|solutionrelative:src\\travelvietnam.domain\\entities\\region.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|solutionrelative:src\\travelvietnam.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.application\\common\\models\\paginatedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|solutionrelative:src\\travelvietnam.application\\common\\models\\paginatedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D872C06-A7CE-8CA6-DCEF-44AA9A602B82}|src\\TravelVietnam.Domain\\TravelVietnam.Domain.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.domain\\common\\baseauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D872C06-A7CE-8CA6-DCEF-44AA9A602B82}|src\\TravelVietnam.Domain\\TravelVietnam.Domain.csproj|solutionrelative:src\\travelvietnam.domain\\common\\baseauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.application\\features\\blogs\\queries\\getblogbyslugquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|solutionrelative:src\\travelvietnam.application\\features\\blogs\\queries\\getblogbyslugquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.webapi\\controllers\\blogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|solutionrelative:src\\travelvietnam.webapi\\controllers\\blogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6DFCDE3-BADC-86C7-9671-8C1DDFAA045E}|src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.infrastructure\\migrations\\20260527024831_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6DFCDE3-BADC-86C7-9671-8C1DDFAA045E}|src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj|solutionrelative:src\\travelvietnam.infrastructure\\migrations\\20260527024831_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.application\\features\\regions\\queries\\getregionbyslugqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|solutionrelative:src\\travelvietnam.application\\features\\regions\\queries\\getregionbyslugqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.webapi\\controllers\\destinationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|solutionrelative:src\\travelvietnam.webapi\\controllers\\destinationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.application\\features\\airecommendations\\queries\\getairecommendationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|solutionrelative:src\\travelvietnam.application\\features\\airecommendations\\queries\\getairecommendationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,20 +75,12 @@
       "RelativeMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|solutionrelative:src\\travelvietnam.webapi\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6DFCDE3-BADC-86C7-9671-8C1DDFAA045E}|src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6DFCDE3-BADC-86C7-9671-8C1DDFAA045E}|src\\TravelVietnam.Infrastructure\\TravelVietnam.Infrastructure.csproj|solutionrelative:src\\travelvietnam.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|solutionrelative:src\\travelvietnam.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.application\\dtos\\auth\\authdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|solutionrelative:src\\travelvietnam.application\\dtos\\auth\\authdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D872C06-A7CE-8CA6-DCEF-44AA9A602B82}|src\\TravelVietnam.Domain\\TravelVietnam.Domain.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.domain\\common\\baseauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D872C06-A7CE-8CA6-DCEF-44AA9A602B82}|src\\TravelVietnam.Domain\\TravelVietnam.Domain.csproj|solutionrelative:src\\travelvietnam.domain\\common\\baseauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D872C06-A7CE-8CA6-DCEF-44AA9A602B82}|src\\TravelVietnam.Domain\\TravelVietnam.Domain.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,6 +97,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{CF9AE130-BF68-0CD5-3653-8CB2DAA9B860}|src\\TravelVietnam.WebApi\\TravelVietnam.WebApi.csproj|solutionrelative:src\\travelvietnam.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|d:\\personalproject\\travelvietnam\\backend\\src\\travelvietnam.application\\features\\regions\\queries\\getregionbyslugquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7980A4B-DCD4-0C8D-CAA1-4451013C2291}|src\\TravelVietnam.Application\\TravelVietnam.Application.csproj|solutionrelative:src\\travelvietnam.application\\features\\regions\\queries\\getregionbyslugquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,28 +126,103 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GetAIRecommendationQuery.cs",
-              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\AIRecommendations\\Queries\\GetAIRecommendationQuery.cs",
-              "RelativeDocumentMoniker": "src\\TravelVietnam.Application\\Features\\AIRecommendations\\Queries\\GetAIRecommendationQuery.cs",
-              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\AIRecommendations\\Queries\\GetAIRecommendationQuery.cs",
-              "RelativeToolTip": "src\\TravelVietnam.Application\\Features\\AIRecommendations\\Queries\\GetAIRecommendationQuery.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAswI8AAABeAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GetProvincesQuery.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\Provinces\\Queries\\GetProvincesQuery.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.Application\\Features\\Provinces\\Queries\\GetProvincesQuery.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\Provinces\\Queries\\GetProvincesQuery.cs",
+              "RelativeToolTip": "src\\TravelVietnam.Application\\Features\\Provinces\\Queries\\GetProvincesQuery.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAcwCYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T03:21:02.339Z",
+              "WhenOpened": "2026-05-28T09:38:05.602Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AIRecommendationsController.cs",
-              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\AIRecommendationsController.cs",
-              "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\Controllers\\AIRecommendationsController.cs",
-              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\AIRecommendationsController.cs",
-              "RelativeToolTip": "src\\TravelVietnam.WebApi\\Controllers\\AIRecommendationsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ProvincesController.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\ProvincesController.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\Controllers\\ProvincesController.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\ProvincesController.cs",
+              "RelativeToolTip": "src\\TravelVietnam.WebApi\\Controllers\\ProvincesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T03:18:56.54Z"
+              "WhenOpened": "2026-05-28T09:36:18.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PaginatedList.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Common\\Models\\PaginatedList.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.Application\\Common\\Models\\PaginatedList.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Common\\Models\\PaginatedList.cs",
+              "RelativeToolTip": "src\\TravelVietnam.Application\\Common\\Models\\PaginatedList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T07:10:00.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RedisCacheService.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Infrastructure\\Services\\RedisCacheService.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.Infrastructure\\Services\\RedisCacheService.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Infrastructure\\Services\\RedisCacheService.cs",
+              "RelativeToolTip": "src\\TravelVietnam.Infrastructure\\Services\\RedisCacheService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T07:05:32.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\appsettings.json",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\appsettings.json",
+              "RelativeToolTip": "src\\TravelVietnam.WebApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-28T07:04:44.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetBlogBySlugQuery.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\Blogs\\Queries\\GetBlogBySlugQuery.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.Application\\Features\\Blogs\\Queries\\GetBlogBySlugQuery.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\Blogs\\Queries\\GetBlogBySlugQuery.cs",
+              "RelativeToolTip": "src\\TravelVietnam.Application\\Features\\Blogs\\Queries\\GetBlogBySlugQuery.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T07:04:29.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20260527024831_InitialCreate.Designer.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Infrastructure\\Migrations\\20260527024831_InitialCreate.Designer.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.Infrastructure\\Migrations\\20260527024831_InitialCreate.Designer.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Infrastructure\\Migrations\\20260527024831_InitialCreate.Designer.cs",
+              "RelativeToolTip": "src\\TravelVietnam.Infrastructure\\Migrations\\20260527024831_InitialCreate.Designer.cs",
+              "ViewState": "AgIAAOMCAAAAAAAAAAAqwPsCAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T06:44:29.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GetRegionBySlugQuery.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\Regions\\Queries\\GetRegionBySlugQuery.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.Application\\Features\\Regions\\Queries\\GetRegionBySlugQuery.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\Regions\\Queries\\GetRegionBySlugQuery.cs",
+              "RelativeToolTip": "src\\TravelVietnam.Application\\Features\\Regions\\Queries\\GetRegionBySlugQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T02:49:25.075Z"
             },
             {
               "$type": "Document",
@@ -101,13 +232,53 @@
               "RelativeDocumentMoniker": "src\\TravelVietnam.Infrastructure\\DependencyInjection.cs",
               "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Infrastructure\\DependencyInjection.cs",
               "RelativeToolTip": "src\\TravelVietnam.Infrastructure\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T03:16:49.148Z"
+              "WhenOpened": "2026-05-27T03:16:49.148Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "Region.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Domain\\Entities\\Region.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.Domain\\Entities\\Region.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Domain\\Entities\\Region.cs",
+              "RelativeToolTip": "src\\TravelVietnam.Domain\\Entities\\Region.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T09:18:07.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegionsController.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\RegionsController.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\Controllers\\RegionsController.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\RegionsController.cs",
+              "RelativeToolTip": "src\\TravelVietnam.WebApi\\Controllers\\RegionsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T02:48:34.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Province.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Domain\\Entities\\Province.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.Domain\\Entities\\Province.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Domain\\Entities\\Province.cs",
+              "RelativeToolTip": "src\\TravelVietnam.Domain\\Entities\\Province.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T09:20:35.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "BaseAuditableEntity.cs",
               "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Domain\\Common\\BaseAuditableEntity.cs",
               "RelativeDocumentMoniker": "src\\TravelVietnam.Domain\\Common\\BaseAuditableEntity.cs",
@@ -119,7 +290,69 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
+              "Title": "GetRegionBySlugQueryHandler.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\Regions\\Queries\\GetRegionBySlugQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.Application\\Features\\Regions\\Queries\\GetRegionBySlugQueryHandler.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\Regions\\Queries\\GetRegionBySlugQueryHandler.cs",
+              "RelativeToolTip": "src\\TravelVietnam.Application\\Features\\Regions\\Queries\\GetRegionBySlugQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T02:49:26.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DestinationsController.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\DestinationsController.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\Controllers\\DestinationsController.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\DestinationsController.cs",
+              "RelativeToolTip": "src\\TravelVietnam.WebApi\\Controllers\\DestinationsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T02:48:28.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BlogsController.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\BlogsController.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\Controllers\\BlogsController.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\BlogsController.cs",
+              "RelativeToolTip": "src\\TravelVietnam.WebApi\\Controllers\\BlogsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T02:48:18.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GetAIRecommendationQuery.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\AIRecommendations\\Queries\\GetAIRecommendationQuery.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.Application\\Features\\AIRecommendations\\Queries\\GetAIRecommendationQuery.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\Features\\AIRecommendations\\Queries\\GetAIRecommendationQuery.cs",
+              "RelativeToolTip": "src\\TravelVietnam.Application\\Features\\AIRecommendations\\Queries\\GetAIRecommendationQuery.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAswEsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T03:21:02.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AIRecommendationsController.cs",
+              "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\AIRecommendationsController.cs",
+              "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\Controllers\\AIRecommendationsController.cs",
+              "ToolTip": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\AIRecommendationsController.cs",
+              "RelativeToolTip": "src\\TravelVietnam.WebApi\\Controllers\\AIRecommendationsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T03:18:56.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Domain\\Class1.cs",
               "RelativeDocumentMoniker": "src\\TravelVietnam.Domain\\Class1.cs",
@@ -131,7 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 21,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\TravelVietnam.Application\\DependencyInjection.cs",
@@ -143,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 22,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Program.cs",
               "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\Program.cs",
@@ -155,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 17,
               "Title": "ExceptionHandlingMiddleware.cs",
               "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Middleware\\ExceptionHandlingMiddleware.cs",
               "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\Middleware\\ExceptionHandlingMiddleware.cs",
@@ -167,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 18,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\Controllers\\AuthController.cs",
@@ -179,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 19,
               "Title": "AuthDtos.cs",
               "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.Application\\DTOs\\Auth\\AuthDtos.cs",
               "RelativeDocumentMoniker": "src\\TravelVietnam.Application\\DTOs\\Auth\\AuthDtos.cs",
@@ -191,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 23,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\PersonalProject\\TravelVietNam\\backend\\src\\TravelVietnam.WebApi\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "src\\TravelVietnam.WebApi\\Properties\\launchSettings.json",

@@ -5,6 +5,7 @@ D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.AssemblyInfoInputs.cache
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.AssemblyInfo.cs
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.csproj.CoreCompileInputs.cache
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.sourcelink.json
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.dll
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\refint\TravelVietnam.Domain.dll
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Domain\obj\Debug\net8.0\TravelVietnam.Domain.pdb

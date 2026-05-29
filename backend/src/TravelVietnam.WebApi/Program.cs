@@ -17,6 +17,7 @@ using Serilog;
 using TravelVietnam.Application;
 using TravelVietnam.Infrastructure;
 using TravelVietnam.Infrastructure.Persistence;
+using TravelVietnam.Infrastructure.Services;
 using TravelVietnam.WebApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -98,7 +99,11 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:4200") // Angular app origin
+        policy.WithOrigins(
+                  "http://localhost:4200",  // Angular dev server
+                  "http://localhost:4000",  // Angular SSR server
+                  "http://web:4000"         // Docker SSR container
+              )
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials(); // Required for HttpOnly refresh token cookies
@@ -177,6 +182,15 @@ using (var scope = app.Services.CreateScope())
         // Automatically apply database migrations at startup
         context.Database.Migrate();
         Console.WriteLine("Database migrations applied successfully.");
+
+        // Seed initial data
+        DataSeeder.SeedData(context);
+        Console.WriteLine("Database seeding completed successfully.");
+
+        // Crawl and seed real tourism data
+        var crawlService = new CrawlDataService(services.GetRequiredService<IConfiguration>());
+        await crawlService.CrawlAndSeedAsync();
+        Console.WriteLine("Tourism data crawled and seeded successfully.");
     }
     catch (Exception ex)
     {

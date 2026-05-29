@@ -14,6 +14,12 @@ services:
       - sql_data:/var/opt/mssql
     networks:
       - travel_network
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P TravelVietNamPass@123 -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
 
   # Cache Service (Redis)
   redis:
@@ -25,6 +31,11 @@ services:
       - redis_data:/data
     networks:
       - travel_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
 
   # Backend Web API Service
   api:
@@ -35,16 +46,23 @@ services:
       dockerfile: src/TravelVietnam.WebApi/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
       - ConnectionStrings__DefaultConnection=Server=db;Database=TravelVietnamDb;User Id=sa;Password=TravelVietNamPass@123;TrustServerCertificate=True;
       - ConnectionStrings__Redis=redis:6379
       - JwtSettings__SecretKey=TravelVietnam_SuperSecureKey_For_JwtBearer_SHA256_Authentication_2026
+      - JwtSettings__Issuer=TravelCoreAPI
+      - JwtSettings__Audience=TravelCoreClient
+      - JwtSettings__AccessTokenExpirationMinutes=15
     ports:
       - "5000:80"
     depends_on:
-      - db
-      - redis
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     networks:
       - travel_network
+    restart: unless-stopped
 
   # Frontend SSR Service
   web:
@@ -54,13 +72,15 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "4200:4000" # SSR server port
+      - "4200:4000"
     environment:
-      - API_URL=http://api:80 # Maps to internal docker network API port
+      - NODE_ENV=production
+      - API_URL=http://api:80/api/v1
     depends_on:
       - api
     networks:
       - travel_network
+    restart: unless-stopped
 
 volumes:
   sql_data:

@@ -10,6 +10,7 @@ D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\De
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.AssemblyInfoInputs.cache
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.AssemblyInfo.cs
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.csproj.CoreCompileInputs.cache
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.sourcelink.json
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVi.C70AC768.Up2Date
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\TravelVietnam.Infrastructure.dll
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.Infrastructure\obj\Debug\net8.0\refint\TravelVietnam.Infrastructure.dll

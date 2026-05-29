@@ -15,6 +15,7 @@ D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\bin\Debug\net8
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\bin\Debug\net8.0\Azure.Identity.dll
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\bin\Debug\net8.0\FluentValidation.dll
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\bin\Debug\net8.0\HtmlAgilityPack.dll
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\bin\Debug\net8.0\Humanizer.dll
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\bin\Debug\net8.0\MediatR.dll
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\bin\Debug\net8.0\MediatR.Contracts.dll
@@ -154,6 +155,7 @@ D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\TravelVietnam.WebApi.csproj.CoreCompileInputs.cache
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\TravelVietnam.WebApi.MvcApplicationPartsAssemblyInfo.cs
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\TravelVietnam.WebApi.MvcApplicationPartsAssemblyInfo.cache
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\TravelVietnam.WebApi.sourcelink.json
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\rjimswa.dswa.cache.json
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
@@ -163,10 +165,10 @@ D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\staticwebassets.development.json
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\swae.build.ex.cache
+D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\TravelVi.FAD7CF2A.Up2Date
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\TravelVietnam.WebApi.dll
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\refint\TravelVietnam.WebApi.dll
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\TravelVietnam.WebApi.pdb
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\TravelVietnam.WebApi.genruntimeconfig.cache
 D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\ref\TravelVietnam.WebApi.dll
-D:\PersonalProject\TravelVietNam\backend\src\TravelVietnam.WebApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

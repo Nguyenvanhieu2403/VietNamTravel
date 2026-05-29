@@ -11,5 +11,7 @@ namespace TravelVietnam.Domain.Entities
 
         // Navigation properties
         public virtual ICollection<Province> Provinces { get; set; } = new List<Province>();
+        public virtual ICollection<Destination> Destinations { get; set; } = new List<Destination>();
+        public virtual ICollection<Culture> Cultures { get; set; } = new List<Culture>();
     }
 }

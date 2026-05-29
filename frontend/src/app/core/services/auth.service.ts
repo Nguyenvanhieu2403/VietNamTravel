@@ -3,6 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { ApiService } from './api.service';
+import { LoginRequest, LoginResponse, RegisterRequest, TokenRefreshRequest } from '../models/auth.models';
 
 @Injectable({
   providedIn: 'root'
@@ -42,8 +43,8 @@ export class AuthService {
     return this.currentUserValue?.accessToken || null;
   }
 
-  login(credentials: any): Observable<any> {
-    return this.apiService.post<any>('auth/login', credentials).pipe(
+  login(credentials: LoginRequest): Observable<LoginResponse> {
+    return this.apiService.post<LoginResponse>('auth/login', credentials).pipe(
       map(user => {
         if (user && user.accessToken) {
           if (this.isBrowser) {
@@ -56,17 +57,17 @@ export class AuthService {
     );
   }
 
-  register(userData: any): Observable<any> {
+  register(userData: RegisterRequest): Observable<any> {
     return this.apiService.post<any>('auth/register', userData);
   }
 
-  refreshToken(): Observable<any> {
-    const payload = {
-      accessToken: this.token,
+  refreshToken(): Observable<LoginResponse> {
+    const payload: TokenRefreshRequest = {
+      accessToken: this.token || '',
       refreshToken: this.currentUserValue?.refreshToken || ''
     };
 
-    return this.apiService.post<any>('auth/refresh-token', payload).pipe(
+    return this.apiService.post<LoginResponse>('auth/refresh-token', payload).pipe(
       map(user => {
         if (user && user.accessToken) {
           const updatedUser = { ...this.currentUserValue, ...user };

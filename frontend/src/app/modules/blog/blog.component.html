@@ -2,18 +2,18 @@
   <!-- Featured Article Hero -->
   @if (featuredArticle) {
     <section class="featured-hero">
-      <div class="hero-image" [style.background-image]="'url(' + featuredArticle.imageUrl + ')'"></div>
+      <div class="hero-image" [style.background-image]="'url(' + (featuredArticle.thumbnailUrl || featuredArticle.bannerUrl || '') + ')'"></div>
       <div class="hero-gradient"></div>
       <div class="hero-content">
-        <span class="hero-category">{{ featuredArticle.category.toUpperCase() }}</span>
+        <span class="hero-category">{{ (featuredArticle.tags || 'BÀI VIẾT').toUpperCase() }}</span>
         <h1 class="hero-title">{{ featuredArticle.title }}</h1>
-        <p class="hero-excerpt">{{ featuredArticle.excerpt }}</p>
+        <p class="hero-excerpt">{{ featuredArticle.summary || featuredArticle.content.substring(0, 200) + '...' }}</p>
         <div class="hero-meta">
-          <span class="meta-author">{{ featuredArticle.author }}</span>
+          <span class="meta-author">{{ featuredArticle.author || 'Admin' }}</span>
           <span class="meta-separator">•</span>
-          <span class="meta-date">{{ featuredArticle.date }}</span>
+          <span class="meta-date">{{ featuredArticle.publishedAt ? (featuredArticle.publishedAt | date:'dd/MM/yyyy') : (featuredArticle.createdAt | date:'dd/MM/yyyy') }}</span>
           <span class="meta-separator">•</span>
-          <span class="meta-read">{{ featuredArticle.readTime }}</span>
+          <span class="meta-read">{{ featuredArticle.readTime || 5 }} phút đọc</span>
         </div>
         <a [href]="'/blog/' + featuredArticle.slug" class="hero-cta">Đọc Bài Viết →</a>
       </div>
@@ -63,16 +63,16 @@
       <div class="editors-grid">
         @for (article of editorsPicks; track article.id) {
           <div class="editor-card">
-            <div class="editor-image" [style.background-image]="'url(' + article.imageUrl + ')'"></div>
+            <div class="editor-image" [style.background-image]="'url(' + (article.thumbnailUrl || article.bannerUrl || '') + ')'"></div>
             <div class="editor-overlay"></div>
             <div class="editor-content">
-              <span class="editor-category">{{ article.category }}</span>
+              <span class="editor-category">{{ article.tags || 'Bài viết' }}</span>
               <h3 class="editor-title">{{ article.title }}</h3>
-              <p class="editor-excerpt">{{ article.excerpt }}</p>
+              <p class="editor-excerpt">{{ article.summary || article.content.substring(0, 150) + '...' }}</p>
               <div class="editor-meta">
-                <span>{{ article.author }}</span>
+                <span>{{ article.author || 'Admin' }}</span>
                 <span>•</span>
-                <span>{{ article.readTime }}</span>
+                <span>{{ article.readTime || 5 }} phút đọc</span>
               </div>
             </div>
           </div>
@@ -94,18 +94,18 @@
       <div class="articles-grid">
         @for (article of filteredArticles; track article.id) {
           <article class="article-card">
-            <div class="article-image" [style.background-image]="'url(' + article.imageUrl + ')'"></div>
+            <div class="article-image" [style.background-image]="'url(' + (article.thumbnailUrl || article.bannerUrl || '') + ')'"></div>
             <div class="article-overlay"></div>
             <div class="article-content">
-              <span class="article-category">{{ article.category }}</span>
+              <span class="article-category">{{ article.tags || 'Bài viết' }}</span>
               <h3 class="article-title">{{ article.title }}</h3>
-              <p class="article-excerpt">{{ article.excerpt }}</p>
+              <p class="article-excerpt">{{ article.summary || article.content.substring(0, 150) + '...' }}</p>
               <div class="article-meta">
                 <div class="meta-author-info">
-                  <span class="author-name">{{ article.author }}</span>
-                  <span class="meta-date">{{ article.date }}</span>
+                  <span class="author-name">{{ article.author || 'Admin' }}</span>
+                  <span class="meta-date">{{ article.publishedAt ? (article.publishedAt | date:'dd/MM/yyyy') : (article.createdAt | date:'dd/MM/yyyy') }}</span>
                 </div>
-                <span class="meta-read">{{ article.readTime }}</span>
+                <span class="meta-read">{{ article.readTime || 5 }} phút đọc</span>
               </div>
               <a [href]="'/blog/' + article.slug" class="article-link">Đọc thêm →</a>
             </div>

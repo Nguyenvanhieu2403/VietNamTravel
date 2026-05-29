@@ -34,6 +34,7 @@ namespace TravelVietnam.Infrastructure.Persistence
         public DbSet<Permission> Permissions => Set<Permission>();
         public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
         public DbSet<Blog> Blogs => Set<Blog>();
+        public DbSet<Culture> Cultures => Set<Culture>();
         public DbSet<MediaFile> MediaFiles => Set<MediaFile>();
         public DbSet<Review> Reviews => Set<Review>();
         public DbSet<TravelPlan> TravelPlans => Set<TravelPlan>();
@@ -47,8 +48,39 @@ namespace TravelVietnam.Infrastructure.Persistence
             modelBuilder.Entity<Region>().HasIndex(r => r.Slug).IsUnique();
             modelBuilder.Entity<Province>().HasIndex(p => p.Slug).IsUnique();
             modelBuilder.Entity<Blog>().HasIndex(b => b.Slug).IsUnique();
+            modelBuilder.Entity<Destination>().HasIndex(d => d.Slug).IsUnique();
+            modelBuilder.Entity<Culture>().HasIndex(c => c.Slug).IsUnique();
             modelBuilder.Entity<User>().HasIndex(u => u.Username).IsUnique();
             modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
+
+            // Configure Cascade Delete Behavior to prevent multiple cascade paths
+            // Region -> Destination: NoAction (prevents cycle with Region -> Province -> Destination)
+            modelBuilder.Entity<Destination>()
+                .HasOne(d => d.Region)
+                .WithMany(r => r.Destinations)
+                .HasForeignKey(d => d.RegionId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            // Province -> Destination: NoAction (safer for production)
+            modelBuilder.Entity<Destination>()
+                .HasOne(d => d.Province)
+                .WithMany(p => p.Destinations)
+                .HasForeignKey(d => d.ProvinceId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            // Region -> Province: NoAction (prevents cascade to Destination)
+            modelBuilder.Entity<Province>()
+                .HasOne(p => p.Region)
+                .WithMany(r => r.Provinces)
+                .HasForeignKey(p => p.RegionId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            // Region -> Culture: NoAction (optional FK, safer)
+            modelBuilder.Entity<Culture>()
+                .HasOne(c => c.Region)
+                .WithMany(r => r.Cultures)
+                .HasForeignKey(c => c.RegionId)
+                .OnDelete(DeleteBehavior.NoAction);
 
             // Configure Join Tables
             modelBuilder.Entity<TravelPlanDestination>()
@@ -82,6 +114,7 @@ namespace TravelVietnam.Infrastructure.Persistence
             modelBuilder.Entity<TravelSeason>().HasQueryFilter(x => !x.IsDeleted);
             modelBuilder.Entity<User>().HasQueryFilter(x => !x.IsDeleted);
             modelBuilder.Entity<Blog>().HasQueryFilter(x => !x.IsDeleted);
+            modelBuilder.Entity<Culture>().HasQueryFilter(x => !x.IsDeleted);
             modelBuilder.Entity<MediaFile>().HasQueryFilter(x => !x.IsDeleted);
             modelBuilder.Entity<Review>().HasQueryFilter(x => !x.IsDeleted);
             modelBuilder.Entity<TravelPlan>().HasQueryFilter(x => !x.IsDeleted);

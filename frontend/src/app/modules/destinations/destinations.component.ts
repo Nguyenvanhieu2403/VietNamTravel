@@ -1,18 +1,7 @@
 import { Component, OnInit, PLATFORM_ID, Inject, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-
-interface Destination {
-  id: string;
-  name: string;
-  slug: string;
-  category: string;
-  description: string;
-  imageUrl: string;
-  season: string;
-  budget: string;
-  tags: string[];
-  featured: boolean;
-}
+import { DestinationService } from '../../core/services/destination.service';
+import { DestinationDto } from '../../core/models/travel.models';
 
 @Component({
   selector: 'app-destinations',
@@ -25,6 +14,8 @@ export class DestinationsComponent implements OnInit {
 
   public selectedCategory = signal<string>('all');
   public searchQuery = signal<string>('');
+  public loading = signal<boolean>(true);
+  public error = signal<string | null>(null);
 
   public categories = [
     { id: 'all', name: 'Tất Cả', icon: '🌏' },
@@ -35,101 +26,52 @@ export class DestinationsComponent implements OnInit {
     { id: 'city', name: 'Thành Phố', icon: '🏙️' }
   ];
 
-  public destinations: Destination[] = [
-    {
-      id: '1',
-      name: 'Vịnh Hạ Long',
-      slug: 'vinh-ha-long',
-      category: 'nature',
-      description: 'Di sản thiên nhiên thế giới với hàng ngàn hòn đảo đá vôi kỳ vĩ',
-      imageUrl: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=80',
-      season: 'Tháng 3 - Tháng 5',
-      budget: '3-5 triệu VND',
-      tags: ['UNESCO', 'Du thuyền', 'Hang động'],
-      featured: true
-    },
-    {
-      id: '2',
-      name: 'Phố Cổ Hội An',
-      slug: 'hoi-an',
-      category: 'heritage',
-      description: 'Thành phố cổ kính với kiến trúc độc đáo và đèn lồng rực rỡ',
-      imageUrl: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80',
-      season: 'Tháng 2 - Tháng 4',
-      budget: '2-4 triệu VND',
-      tags: ['UNESCO', 'Văn hóa', 'Ẩm thực'],
-      featured: true
-    },
-    {
-      id: '3',
-      name: 'Ruộng Bậc Thang Sa Pa',
-      slug: 'sapa',
-      category: 'mountain',
-      description: 'Thửa ruộng bậc thang uốn lượn như tranh vẽ giữa núi rừng Tây Bắc',
-      imageUrl: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80',
-      season: 'Tháng 9 - Tháng 11',
-      budget: '3-6 triệu VND',
-      tags: ['Trekking', 'Văn hóa', 'Nhiếp ảnh'],
-      featured: true
-    },
-    {
-      id: '4',
-      name: 'Đảo Phú Quốc',
-      slug: 'phu-quoc',
-      category: 'beach',
-      description: 'Đảo ngọc với bãi biển cát trắng và làn nước trong xanh như pha lê',
-      imageUrl: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80',
-      season: 'Tháng 11 - Tháng 3',
-      budget: '5-8 triệu VND',
-      tags: ['Nghỉ dưỡng', 'Lặn biển', 'Hải sản'],
-      featured: false
-    },
-    {
-      id: '5',
-      name: 'Động Phong Nha',
-      slug: 'phong-nha',
-      category: 'nature',
-      description: 'Hệ thống hang động kỳ vĩ với những khối thạch nhũ tuyệt đẹp',
-      imageUrl: 'https://images.unsplash.com/photo-1599708153386-62e2531a5ebf?auto=format&fit=crop&w=1200&q=80',
-      season: 'Tháng 2 - Tháng 8',
-      budget: '4-7 triệu VND',
-      tags: ['UNESCO', 'Khám phá', 'Mạo hiểm'],
-      featured: false
-    },
-    {
-      id: '6',
-      name: 'Thành Phố Hồ Chí Minh',
-      slug: 'ho-chi-minh',
-      category: 'city',
-      description: 'Thành phố năng động với sự pha trộn giữa hiện đại và truyền thống',
-      imageUrl: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80',
-      season: 'Quanh năm',
-      budget: '3-5 triệu VND',
-      tags: ['Đô thị', 'Ẩm thực', 'Mua sắm'],
-      featured: false
-    }
-  ];
+  public destinations: DestinationDto[] = [];
+  public allDestinations: DestinationDto[] = [];
 
-  constructor(@Inject(PLATFORM_ID) platformId: Object) {
+  constructor(
+    @Inject(PLATFORM_ID) platformId: Object,
+    private destinationService: DestinationService
+  ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit(): void {
-    if (this.isBrowser) {
-      this.initAnimations();
-    }
+    this.loadDestinations();
   }
 
-  get filteredDestinations(): Destination[] {
-    return this.destinations.filter(dest => {
+  private loadDestinations(): void {
+    this.loading.set(true);
+    this.error.set(null);
+
+    this.destinationService.getDestinations(1, 50).subscribe({
+      next: (data) => {
+        this.allDestinations = data.items;
+        this.destinations = data.items;
+        this.loading.set(false);
+        if (this.isBrowser) {
+          setTimeout(() => this.initAnimations(), 100);
+        }
+      },
+      error: (err) => {
+        this.error.set('Không thể tải danh sách điểm đến. Vui lòng thử lại sau.');
+        this.loading.set(false);
+        console.error('Error loading destinations:', err);
+      }
+    });
+  }
+
+  get filteredDestinations(): DestinationDto[] {
+    return this.allDestinations.filter(dest => {
       const matchesCategory = this.selectedCategory() === 'all' || dest.category === this.selectedCategory();
-      const matchesSearch = dest.name.toLowerCase().includes(this.searchQuery().toLowerCase());
+      const matchesSearch = dest.name.toLowerCase().includes(this.searchQuery().toLowerCase()) ||
+                           (dest.description && dest.description.toLowerCase().includes(this.searchQuery().toLowerCase()));
       return matchesCategory && matchesSearch;
     });
   }
 
-  get featuredDestinations(): Destination[] {
-    return this.destinations.filter(dest => dest.featured);
+  get featuredDestinations(): DestinationDto[] {
+    return this.allDestinations.filter(dest => dest.isFeatured);
   }
 
   selectCategory(categoryId: string): void {

@@ -30,8 +30,11 @@ namespace TravelVietnam.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BannerUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -53,7 +56,7 @@ namespace TravelVietnam.Infrastructure.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsPublished")
+                    b.Property<bool>("IsFeatured")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastModifiedAt")
@@ -65,9 +68,99 @@ namespace TravelVietnam.Infrastructure.Migrations
                     b.Property<DateTime?>("PublishedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("ReadTime")
+                        .HasColumnType("int");
+
                     b.Property<string>("Slug")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Summary")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tags")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ThumbnailUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ViewCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Slug")
+                        .IsUnique();
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("TravelVietnam.Domain.Entities.Culture", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BannerUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CultureType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FestivalSeason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsFeatured")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("RegionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ThumbnailUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -75,12 +168,12 @@ namespace TravelVietnam.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
+                    b.HasIndex("RegionId");
 
                     b.HasIndex("Slug")
                         .IsUnique();
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Cultures");
                 });
 
             modelBuilder.Entity("TravelVietnam.Domain.Entities.Destination", b =>
@@ -91,7 +184,13 @@ namespace TravelVietnam.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Address")
+                    b.Property<string>("BannerUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BestTimeToVisit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
@@ -110,10 +209,13 @@ namespace TravelVietnam.Infrastructure.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("EntryFee")
+                    b.Property<decimal?>("EstimatedBudget")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsFeatured")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastModifiedAt")
@@ -135,9 +237,30 @@ namespace TravelVietnam.Infrastructure.Migrations
                     b.Property<int>("ProvinceId")
                         .HasColumnType("int");
 
+                    b.Property<decimal?>("Rating")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShortDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ThumbnailUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProvinceId");
+
+                    b.HasIndex("RegionId");
+
+                    b.HasIndex("Slug")
+                        .IsUnique();
 
                     b.ToTable("Destinations");
                 });
@@ -266,6 +389,9 @@ namespace TravelVietnam.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("CultureId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
@@ -298,6 +424,8 @@ namespace TravelVietnam.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BlogId");
+
+                    b.HasIndex("CultureId");
 
                     b.HasIndex("DestinationId");
 
@@ -752,13 +880,19 @@ namespace TravelVietnam.Infrastructure.Migrations
 
             modelBuilder.Entity("TravelVietnam.Domain.Entities.Blog", b =>
                 {
-                    b.HasOne("TravelVietnam.Domain.Entities.User", "Author")
+                    b.HasOne("TravelVietnam.Domain.Entities.User", null)
                         .WithMany("Blogs")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
+                });
 
-                    b.Navigation("Author");
+            modelBuilder.Entity("TravelVietnam.Domain.Entities.Culture", b =>
+                {
+                    b.HasOne("TravelVietnam.Domain.Entities.Region", "Region")
+                        .WithMany("Cultures")
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("Region");
                 });
 
             modelBuilder.Entity("TravelVietnam.Domain.Entities.Destination", b =>
@@ -766,10 +900,18 @@ namespace TravelVietnam.Infrastructure.Migrations
                     b.HasOne("TravelVietnam.Domain.Entities.Province", "Province")
                         .WithMany("Destinations")
                         .HasForeignKey("ProvinceId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("TravelVietnam.Domain.Entities.Region", "Region")
+                        .WithMany("Destinations")
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Province");
+
+                    b.Navigation("Region");
                 });
 
             modelBuilder.Entity("TravelVietnam.Domain.Entities.Festival", b =>
@@ -800,6 +942,10 @@ namespace TravelVietnam.Infrastructure.Migrations
                         .WithMany("MediaFiles")
                         .HasForeignKey("BlogId");
 
+                    b.HasOne("TravelVietnam.Domain.Entities.Culture", null)
+                        .WithMany("MediaFiles")
+                        .HasForeignKey("CultureId");
+
                     b.HasOne("TravelVietnam.Domain.Entities.Destination", "Destination")
                         .WithMany("MediaFiles")
                         .HasForeignKey("DestinationId");
@@ -820,7 +966,7 @@ namespace TravelVietnam.Infrastructure.Migrations
                     b.HasOne("TravelVietnam.Domain.Entities.Region", "Region")
                         .WithMany("Provinces")
                         .HasForeignKey("RegionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Region");
@@ -932,6 +1078,11 @@ namespace TravelVietnam.Infrastructure.Migrations
                     b.Navigation("MediaFiles");
                 });
 
+            modelBuilder.Entity("TravelVietnam.Domain.Entities.Culture", b =>
+                {
+                    b.Navigation("MediaFiles");
+                });
+
             modelBuilder.Entity("TravelVietnam.Domain.Entities.Destination", b =>
                 {
                     b.Navigation("MediaFiles");
@@ -958,6 +1109,10 @@ namespace TravelVietnam.Infrastructure.Migrations
 
             modelBuilder.Entity("TravelVietnam.Domain.Entities.Region", b =>
                 {
+                    b.Navigation("Cultures");
+
+                    b.Navigation("Destinations");
+
                     b.Navigation("Provinces");
                 });
 

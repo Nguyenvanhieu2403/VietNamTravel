@@ -34,16 +34,18 @@
       <div class="regions-grid">
         @for (region of culturalRegions; track region.id) {
           <div class="region-card">
-            <div class="region-image" [style.background-image]="'url(' + region.imageUrl + ')'"></div>
+            <div class="region-image" [style.background-image]="'url(' + (region.imageUrl || '') + ')'"></div>
             <div class="region-overlay"></div>
             <div class="region-content">
               <h3 class="region-name">{{ region.name }}</h3>
               <p class="region-description">{{ region.description }}</p>
-              <ul class="region-highlights">
-                @for (highlight of region.highlights; track highlight) {
-                  <li>{{ highlight }}</li>
-                }
-              </ul>
+              @if (region.highlights && region.highlights.length > 0) {
+                <ul class="region-highlights">
+                  @for (highlight of region.highlights; track highlight) {
+                    <li>{{ highlight }}</li>
+                  }
+                </ul>
+              }
             </div>
           </div>
         }
@@ -64,10 +66,10 @@
       <div class="cuisine-grid">
         @for (dish of cuisines; track dish.id) {
           <div class="cuisine-card">
-            <div class="cuisine-image" [style.background-image]="'url(' + dish.imageUrl + ')'"></div>
+            <div class="cuisine-image" [style.background-image]="'url(' + (dish.thumbnailUrl || '') + ')'"></div>
             <div class="cuisine-overlay"></div>
             <div class="cuisine-content">
-              <span class="cuisine-region">{{ dish.region }}</span>
+              <span class="cuisine-region">Ẩm thực</span>
               <h4 class="cuisine-name">{{ dish.name }}</h4>
               <p class="cuisine-description">{{ dish.description }}</p>
             </div>
@@ -90,10 +92,10 @@
       <div class="festivals-grid">
         @for (festival of festivals; track festival.id) {
           <div class="festival-card">
-            <div class="festival-image" [style.background-image]="'url(' + festival.imageUrl + ')'"></div>
+            <div class="festival-image" [style.background-image]="'url(https://images.unsplash.com/photo-1508873696983-2df519f0397e?auto=format&fit=crop&w=800&q=80)'"></div>
             <div class="festival-overlay"></div>
             <div class="festival-content">
-              <span class="festival-month">{{ festival.month }}</span>
+              <span class="festival-month">{{ festival.heldDate || festival.lunarDate || 'Hàng năm' }}</span>
               <h4 class="festival-name">{{ festival.name }}</h4>
               <p class="festival-description">{{ festival.description }}</p>
             </div>

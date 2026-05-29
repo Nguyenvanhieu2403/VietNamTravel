@@ -1,2 +1,0 @@
-import './polyfills.server.mjs';
-import{Sa as a,Wa as n,i as s,l as i}from"./chunk-UG253HLC.mjs";var o=class e{constructor(t){this.http=t}baseUrl="https://localhost:7273/api/v1";get(t,r=new a){return this.http.get(`${this.baseUrl}/${t}`,{params:r})}post(t,r={}){return this.http.post(`${this.baseUrl}/${t}`,r)}put(t,r={}){return this.http.put(`${this.baseUrl}/${t}`,r)}delete(t){return this.http.delete(`${this.baseUrl}/${t}`)}static \u0275fac=function(r){return new(r||e)(i(n))};static \u0275prov=s({token:e,factory:e.\u0275fac,providedIn:"root"})};export{o as a};

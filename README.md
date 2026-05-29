@@ -69,41 +69,249 @@ TravelVietnam/
 
 ## 4. Hướng dẫn cài đặt & Khởi chạy
 
-### Cách 1: Sử dụng Docker Compose (Khuyên dùng)
-Yêu cầu hệ thống đã cài đặt Docker và Docker Desktop. Từ thư mục gốc của dự án, chạy lệnh:
+### 🚀 Quick Start (Windows)
+Chạy script tự động với menu tương tác:
+```bash
+start.bat
+```
+
+### 🚀 Quick Start (Linux/Mac)
+```bash
+chmod +x start.sh
+./start.sh
+```
+
+Script cung cấp các tùy chọn:
+1. **Start Backend Only** - Chạy SQL Server + Redis + API (khuyên dùng cho development)
+2. **Start Full Stack** - Chạy toàn bộ hệ thống trong Docker
+3. **Stop All Services** - Dừng tất cả services
+4. **View Logs** - Xem logs của từng service
+5. **Reset Database** - Xóa và tạo lại database
+
+---
+
+### Cách 1: Backend Only + Frontend Local (Khuyên dùng cho Development)
+
+Cách này cho phép bạn phát triển frontend với hot-reload trong khi backend chạy trong Docker.
+
+#### Bước 1: Khởi động Backend Services
+```bash
+docker-compose -f docker-compose.dev.yml up -d
+```
+
+Kiểm tra services đã chạy:
+```bash
+docker-compose -f docker-compose.dev.yml ps
+```
+
+**Services khả dụng:**
+- Backend API: `http://localhost:5000`
+- Swagger UI: `http://localhost:5000/swagger`
+- SQL Server: `localhost:1433` (sa/TravelVietNamPass@123)
+- Redis: `localhost:6379`
+
+#### Bước 2: Chạy Frontend Locally
+```bash
+cd frontend
+npm install
+npm start
+```
+
+Frontend sẽ chạy tại: `http://localhost:4200`
+
+**Lưu ý:** Đợi 30 giây để database migrations hoàn tất trước khi truy cập frontend.
+
+---
+
+### Cách 2: Full Stack với Docker Compose
+
+Chạy toàn bộ hệ thống (Backend + Frontend) trong Docker:
+
 ```bash
 docker-compose up --build -d
 ```
-Docker sẽ tự động tải các container:
-- **Cơ sở dữ liệu (SQL Server)**: Port `1433`
-- **Bộ nhớ đệm (Redis)**: Port `6379`
-- **Backend API**: Port `5000` (Swagger tài liệu chạy tại: `http://localhost:5000/swagger`)
-- **Frontend SSR**: Port `4200` (Truy cập tại: `http://localhost:4200`)
 
-### Cách 2: Khởi chạy thủ công từng phần
+**Services khả dụng:**
+- Frontend SSR: `http://localhost:4200`
+- Backend API: `http://localhost:5000`
+- Swagger UI: `http://localhost:5000/swagger`
+- SQL Server: `localhost:1433`
+- Redis: `localhost:6379`
 
-#### Bước 1: Khởi tạo database
-1. Chạy SQL Server cục bộ trên máy của bạn.
-2. Thực thi toàn bộ script [schema_and_seed.sql](file:///d:/PersonalProject/TravelVietNam/database/schema_and_seed.sql) trong SQL Server Management Studio (SSMS) để tạo database `TravelVietnamDb` và nạp dữ liệu.
+**Lưu ý:** Đợi 1-2 phút để tất cả services khởi động hoàn tất.
 
-#### Bước 2: Chạy Backend API
-1. Đảm bảo cấu hình đúng chuỗi kết nối trong `backend/src/TravelVietnam.WebApi/appsettings.json`.
-2. Truy cập thư mục `backend` và chạy lệnh:
+#### Xem logs
+```bash
+# Tất cả services
+docker-compose logs -f
+
+# Service cụ thể
+docker-compose logs -f api
+docker-compose logs -f web
+docker-compose logs -f db
+```
+
+#### Dừng services
+```bash
+docker-compose down
+
+# Xóa cả volumes (database data)
+docker-compose down -v
+```
+
+---
+
+### Cách 3: Chạy thủ công (Development nâng cao)
+
+#### Bước 1: Khởi tạo Database
+1. Cài đặt SQL Server 2022 trên máy local
+2. Tạo database `TravelVietnamDb`
+3. Chạy migrations:
    ```bash
-   dotnet build
-   dotnet run --project src/TravelVietnam.WebApi/TravelVietnam.WebApi.csproj
+   cd backend/src/TravelVietnam.WebApi
+   dotnet ef database update --project ../TravelVietnam.Infrastructure
+   ```
+4. Seed dữ liệu mẫu:
+   ```bash
+   # Kết nối SQL Server và chạy file
+   sqlcmd -S localhost -U sa -P YourPassword -d TravelVietnamDb -i database/seed-data.sql
    ```
 
-#### Bước 3: Chạy Frontend Angular
-1. Truy cập thư mục `frontend` và cài đặt các thư viện:
+#### Bước 2: Cài đặt Redis
+```bash
+# Windows (với Chocolatey)
+choco install redis-64
+
+# Linux/Mac
+brew install redis
+redis-server
+```
+
+#### Bước 3: Chạy Backend API
+1. Cập nhật connection strings trong `backend/src/TravelVietnam.WebApi/appsettings.json`:
+   ```json
+   {
+     "ConnectionStrings": {
+       "DefaultConnection": "Server=localhost;Database=TravelVietnamDb;Trusted_Connection=True;TrustServerCertificate=True;",
+       "Redis": "localhost:6379"
+     }
+   }
+   ```
+
+2. Chạy API:
    ```bash
+   cd backend/src/TravelVietnam.WebApi
+   dotnet restore
+   dotnet build
+   dotnet run
+   ```
+
+Backend API chạy tại: `http://localhost:5000`
+
+#### Bước 4: Chạy Frontend Angular
+1. Cài đặt dependencies:
+   ```bash
+   cd frontend
    npm install
    ```
-2. Chạy ứng dụng dưới chế độ Development (hoặc SSR):
+
+2. Chạy development server:
    ```bash
-   npm run dev
+   npm start
    ```
-3. Truy cập địa chỉ `http://localhost:4200`.
+
+3. Hoặc build và chạy SSR:
+   ```bash
+   npm run build
+   npm run serve:ssr:frontend
+   ```
+
+Frontend chạy tại: `http://localhost:4200`
+
+---
+
+### 🧪 Kiểm tra Integration
+
+#### Test Backend API
+```bash
+# Health check
+curl http://localhost:5000/api/v1/regions
+
+# Register user
+curl -X POST http://localhost:5000/api/v1/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "Test@123",
+    "fullName": "Test User"
+  }'
+
+# Login
+curl -X POST http://localhost:5000/api/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser",
+    "password": "Test@123"
+  }'
+```
+
+#### Test Frontend
+1. Mở `http://localhost:4200`
+2. Kiểm tra trang Regions
+3. Kiểm tra trang Provinces
+4. Click vào một province để xem chi tiết
+5. Mở Browser DevTools > Network tab để xem API calls
+6. Kiểm tra Console không có errors
+
+---
+
+### 🔧 Troubleshooting
+
+#### Backend không khởi động
+```bash
+# Kiểm tra SQL Server
+docker-compose logs db
+
+# Kiểm tra backend logs
+docker-compose logs api
+
+# Restart services
+docker-compose restart api
+```
+
+#### Frontend không kết nối được Backend
+- Kiểm tra backend đang chạy: `curl http://localhost:5000/api/v1/regions`
+- Kiểm tra CORS configuration trong `Program.cs`
+- Kiểm tra `environment.ts` có đúng API URL
+- Clear browser cache và restart Angular dev server
+
+#### Database connection issues
+```bash
+# Test SQL Server connection
+docker exec -it travel_vietnam_db /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P TravelVietNamPass@123 -Q "SELECT @@VERSION"
+
+# Kiểm tra database tồn tại
+docker exec -it travel_vietnam_db /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P TravelVietNamPass@123 -Q "SELECT name FROM sys.databases"
+```
+
+#### Redis connection issues
+```bash
+# Test Redis
+docker exec -it travel_vietnam_redis redis-cli ping
+# Kết quả: PONG
+```
+
+---
+
+### 📚 Tài liệu chi tiết
+
+Xem [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) để biết thêm:
+- API endpoints đầy đủ
+- Environment configuration
+- Development workflow
+- Production deployment
+- Monitoring và logging
 
 ---
 

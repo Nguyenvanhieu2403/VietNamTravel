@@ -59,10 +59,10 @@
         @for (dest of featuredDestinations; track dest.id; let i = $index) {
           <div class="featured-card" [class.featured-large]="i === 0">
             <app-cinematic-card
-              [imageUrl]="dest.imageUrl"
-              [tag]="dest.category.toUpperCase()"
+              [imageUrl]="dest.thumbnailUrl || dest.bannerUrl || ''"
+              [tag]="(dest.category || 'ĐIỂM ĐẾN').toUpperCase()"
               [title]="dest.name"
-              [description]="dest.description"
+              [description]="dest.shortDescription || dest.description || ''"
               [link]="'/destinations/' + dest.slug"
               [aspectRatio]="i === 0 ? '16/10' : '4/5'">
             </app-cinematic-card>
@@ -85,27 +85,33 @@
       <div class="destinations-grid">
         @for (dest of filteredDestinations; track dest.id) {
           <div class="destination-card">
-            <div class="card-image" [style.background-image]="'url(' + dest.imageUrl + ')'"></div>
+            <div class="card-image" [style.background-image]="'url(' + (dest.thumbnailUrl || dest.bannerUrl || '') + ')'"></div>
             <div class="card-overlay"></div>
             <div class="card-content">
-              <span class="card-category">{{ dest.category }}</span>
+              <span class="card-category">{{ dest.category || 'Điểm đến' }}</span>
               <h3 class="card-title">{{ dest.name }}</h3>
-              <p class="card-description">{{ dest.description }}</p>
+              <p class="card-description">{{ dest.shortDescription || dest.description }}</p>
 
               <div class="card-meta">
                 <div class="meta-item">
                   <span class="meta-icon">📅</span>
-                  <span class="meta-text">{{ dest.season }}</span>
+                  <span class="meta-text">{{ dest.bestTimeToVisit || 'Quanh năm' }}</span>
                 </div>
                 <div class="meta-item">
                   <span class="meta-icon">💰</span>
-                  <span class="meta-text">{{ dest.budget }}</span>
+                  <span class="meta-text">{{ dest.estimatedBudget ? (dest.estimatedBudget / 1000000).toFixed(1) + ' triệu VND' : 'Liên hệ' }}</span>
                 </div>
               </div>
 
               <div class="card-tags">
-                @for (tag of dest.tags; track tag) {
-                  <span class="tag-chip">{{ tag }}</span>
+                @if (dest.provinceName) {
+                  <span class="tag-chip">{{ dest.provinceName }}</span>
+                }
+                @if (dest.regionName) {
+                  <span class="tag-chip">{{ dest.regionName }}</span>
+                }
+                @if (dest.rating) {
+                  <span class="tag-chip">⭐ {{ dest.rating.toFixed(1) }}</span>
                 }
               </div>
 

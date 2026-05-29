@@ -48,13 +48,23 @@ namespace TravelVietnam.Application.DTOs.Travel
     public class DestinationDto
     {
         public int Id { get; set; }
-        public int ProvinceId { get; set; }
         public string Name { get; set; } = null!;
+        public string Slug { get; set; } = null!;
         public string? Description { get; set; }
-        public string? Address { get; set; }
+        public string? ShortDescription { get; set; }
+        public string? ThumbnailUrl { get; set; }
+        public string? BannerUrl { get; set; }
+        public int ProvinceId { get; set; }
+        public string? ProvinceName { get; set; }
+        public int RegionId { get; set; }
+        public string? RegionName { get; set; }
+        public string? Category { get; set; }
+        public string? BestTimeToVisit { get; set; }
+        public decimal? EstimatedBudget { get; set; }
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
-        public decimal EntryFee { get; set; }
+        public decimal? Rating { get; set; }
+        public bool IsFeatured { get; set; }
         public List<MediaFileDto> MediaFiles { get; set; } = new();
     }
 
@@ -108,12 +118,37 @@ namespace TravelVietnam.Application.DTOs.Travel
     public class BlogDto
     {
         public int Id { get; set; }
-        public string AuthorName { get; set; } = null!;
         public string Title { get; set; } = null!;
         public string Slug { get; set; } = null!;
+        public string? Summary { get; set; }
         public string Content { get; set; } = null!;
+        public string? ThumbnailUrl { get; set; }
+        public string? BannerUrl { get; set; }
+        public string? Author { get; set; }
+        public string? Tags { get; set; }
+        public int? ReadTime { get; set; }
+        public int ViewCount { get; set; }
+        public bool IsFeatured { get; set; }
         public DateTime? PublishedAt { get; set; }
-        public bool IsPublished { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public List<MediaFileDto> MediaFiles { get; set; } = new();
+    }
+
+    public class CultureDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = null!;
+        public string Slug { get; set; } = null!;
+        public string? Description { get; set; }
+        public string? Content { get; set; }
+        public string? ThumbnailUrl { get; set; }
+        public string? BannerUrl { get; set; }
+        public int? RegionId { get; set; }
+        public string? RegionName { get; set; }
+        public string? CultureType { get; set; }
+        public string? FestivalSeason { get; set; }
+        public bool IsFeatured { get; set; }
+        public DateTime CreatedAt { get; set; }
         public List<MediaFileDto> MediaFiles { get; set; } = new();
     }
 
